@@ -19,15 +19,15 @@
   <meta name="author" content="wbj_Lsz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题解">
+    <meta name="description" content="本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法题详解">
-<meta property="og:url" content="https://tolsz.me/2024/10/27/%E7%AE%97%E6%B3%95%E9%A2%98%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:url" content="https://tolsz.me/2024/10/20/%E7%AE%97%E6%B3%95%E9%A2%98%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="toLsz">
-<meta property="og:description" content="题解">
+<meta property="og:description" content="本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-27T15:22:18.000Z">
-<meta property="article:modified_time" content="2024-10-27T15:52:20.845Z">
+<meta property="article:published_time" content="2024-10-20T15:22:18.000Z">
+<meta property="article:modified_time" content="2024-11-01T10:13:13.345Z">
 <meta property="article:author" content="wbj_Lsz">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-27 23:22" pubdate>
-           2024 年 10 月 27 日 , 晚上 11:22 , 星期日
+        <time datetime="2024-10-20 23:22" pubdate>
+           2024 年 10 月 20 日 , 晚上 11:22 , 星期日
         </time>
       </span>
     
@@ -228,7 +228,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          2 字
+          928 字
         
       </span>
     
@@ -240,7 +240,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          8 分钟
         
       </span>
     
@@ -282,7 +282,41 @@
             
               <div class="markdown-body">
                 
-                <p>题解</p>
+                <blockquote>
+<p>本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="leetcode-33-搜索旋转排序数组"><a href="#leetcode-33-搜索旋转排序数组" class="headerlink" title="leetcode[33]搜索旋转排序数组"></a>leetcode[33]搜索旋转排序数组</h2><ul>
+<li><p>题目描述：给你旋转后的数组 nums（原本单调递增）和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p>
+</li>
+<li><p>示例 ：</p>
+<pre><code class="hljs">  输入：nums = [4,5,6,7,0,1,2], target = 0
+  输出：4
+</code></pre>
+</li>
+<li><p>要求：时间复杂度为 O(log n) </p>
+</li>
+<li><p>思路：</p>
+<ul>
+<li>其实看到O(log n)就应该下意识想到二分法;基本思路是先用二分法找到旋转点，然后再用二分法找到目标值；</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">binarySearch</span>(<span class="hljs-params">nums, target</span>) &#123;<br>    <span class="hljs-comment">// 初始化双闭区间 [0, n-1] ，即 i, j 分别指向数组首元素、尾元素</span><br>    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, <br>    j = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 循环，当搜索区间为空时跳出（当 i &gt; j 时为空）</span><br>    <span class="hljs-keyword">while</span> (i &lt;= j) &#123;<br>        <span class="hljs-comment">// 计算中点索引 m ，使用 parseInt() 向下取整</span><br>        <span class="hljs-keyword">const</span> m = <span class="hljs-built_in">parseInt</span>(i + (j - i) / <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (nums[m] &lt; target)<br>            <span class="hljs-comment">// 此情况说明 target 在区间 [m+1, j] 中</span><br>            i = m + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[m] &gt; target)<br>            <span class="hljs-comment">// 此情况说明 target 在区间 [i, m-1] 中</span><br>            j = m - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> m; <span class="hljs-comment">// 找到目标元素，返回其索引</span><br>    &#125;<br>    <span class="hljs-comment">// 未找到目标元素，返回 -1</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-comment">//找到x之后，寻找target</span><br><span class="hljs-keyword">var</span> second_half=<span class="hljs-keyword">function</span>(<span class="hljs-params">nums,x,target</span>)&#123;<br>    <span class="hljs-comment">//判断target是否在元素大小区间内，如不，直接返回-1；</span><br>    <span class="hljs-keyword">if</span>(nums[x]&lt;target || nums[x+<span class="hljs-number">1</span>]&gt;target)&#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <span class="hljs-comment">//在区间内，与nums[0]比较，如果target大于其则必然在左部分]0,x]；</span><br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]&lt;=target)&#123;<br>        <span class="hljs-comment">//左部分二分查找target</span><br>       <span class="hljs-keyword">return</span> <span class="hljs-title function_">binarySearch</span>(nums.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>,x+<span class="hljs-number">1</span>),target)<br>    <span class="hljs-comment">//否则在右部分[x+1,nums.length-1]</span><br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">let</span> result=<span class="hljs-title function_">binarySearch</span>(nums.<span class="hljs-title function_">slice</span>(x+<span class="hljs-number">1</span>,nums.<span class="hljs-property">length</span>),target)<br>        <span class="hljs-comment">//分右部分存在与否两种情况</span><br>        <span class="hljs-keyword">if</span> (result===-<span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> result+x+<span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">var</span> search = <span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) &#123;<br>    <span class="hljs-comment">//通过两次176左右/196的两个失败案例[1] 1和 [1,3] 3 补充如下两次特殊情况</span><br>    <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]==target)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    &#125;<br>    <span class="hljs-keyword">if</span>(nums[nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span>]==target)&#123;<br>        <span class="hljs-keyword">return</span> nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">let</span> left=<span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> right=nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span><br>    <span class="hljs-keyword">let</span> x=<span class="hljs-number">0</span>   <span class="hljs-comment">//最大元素的下标x,x+1就是最小元素的下标</span><br><br>    <span class="hljs-comment">//根据单调性判断K处,只有两个元素会出现异常不满足小于右边或大于左边；下标分别为x,x+1</span><br>    <span class="hljs-keyword">while</span>(left&lt;=right)&#123;<br>        <span class="hljs-keyword">let</span> mid=(left+right)&gt;&gt;<span class="hljs-number">1</span><br>        <span class="hljs-comment">//最大元素的下标x</span><br>        <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>] ||nums[mid]&lt;nums[mid-<span class="hljs-number">1</span>])&#123;<br>            x=nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>]?<span class="hljs-attr">mid</span>:mid-<span class="hljs-number">1</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">second_half</span>(nums,x,target)    <br>        <span class="hljs-comment">//mid在右部分        </span><br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[<span class="hljs-number">0</span>])&#123;<br>            right=mid-<span class="hljs-number">1</span><br>        <span class="hljs-comment">//mid在左部分</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            left=mid+<span class="hljs-number">1</span><br>        &#125;<br><br>    &#125;<br>    <span class="hljs-comment">//根据不通过的案列[1,3,5]  3 answer:-1;提醒我应该先判断词列表是否翻转过；</span><br>    <span class="hljs-comment">//如果上个循环结束还没有得出结果说明这个列表可能没有翻转过（也可以理解为在0出翻转，为了节约时间，我们把这个操作移到前面）</span><br>    <span class="hljs-comment">//但是问题在于似乎无法在时间复杂度为logn的前提下判断一个数组是单调递增的，所以只能放在while循环后面，说明词列表没有反转</span><br>    <span class="hljs-keyword">return</span>   <span class="hljs-title function_">binarySearch</span>(nums,target)<br>    <br>&#125;;<br><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二分总结"><a href="#二分总结" class="headerlink" title="二分总结"></a>二分总结</h2><ul>
+<li>特征：二分法的使用场景，其实比较受限，最明显的特点是：</li>
+</ul>
+<ol>
+<li>绝大情况，查找目标具有单调性质（单调递增、单调递减）：整个数组或者类似旋转数组其分成两部分具有单调性；</li>
+<li>有上下边界，并且最好能够通过index下标访问元素</li>
+<li>要求时间复杂度为Logn</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-rotated-sorted-array/solutions/996781/cong-ji-ben-de-er-fen-fa-shuo-qi-ru-he-a-hof5/">参考</a></p>
+<ul>
+<li>基础模版：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = start<br><span class="hljs-keyword">let</span> right = end<br><span class="hljs-keyword">let</span> mid<br><span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>    mid = (left + right) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> (array[mid] === target) &#123;<br>        <span class="hljs-keyword">return</span> result <span class="hljs-comment">//或者 break </span><br>    &#125;<br>    <span class="hljs-keyword">if</span> (array[mid] &lt; target) &#123;<br>        left = mid + <span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">if</span> (array[mid] &gt; target) &#123;<br>        right = mid - <span class="hljs-number">1</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
@@ -322,7 +356,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>算法题详解</div>
-      <div>https://tolsz.me/2024/10/27/算法题详解/</div>
+      <div>https://tolsz.me/2024/10/20/算法题详解/</div>
     </div>
     <div class="license-meta">
       
@@ -334,7 +368,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月27日</div>
+          <div>2024年10月20日</div>
         </div>
       
       
