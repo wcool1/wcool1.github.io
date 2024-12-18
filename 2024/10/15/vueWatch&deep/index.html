@@ -19,21 +19,22 @@
   <meta name="author" content="wbj_Lsz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；">
+    <meta name="description" content="简单讲讲vue3的watch函数和:deep伪类选择器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法题详解">
-<meta property="og:url" content="https://tolsz.me/2024/10/20/%E7%AE%97%E6%B3%95%E9%A2%98%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:title" content="vueWatch">
+<meta property="og:url" content="https://tolsz.me/2024/10/15/vueWatch&deep/index.html">
 <meta property="og:site_name" content="toLsz">
-<meta property="og:description" content="本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；">
+<meta property="og:description" content="简单讲讲vue3的watch函数和:deep伪类选择器">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-20T15:22:18.000Z">
-<meta property="article:modified_time" content="2024-11-01T10:13:13.345Z">
+<meta property="article:published_time" content="2024-10-15T14:31:24.000Z">
+<meta property="article:modified_time" content="2024-12-18T09:52:39.934Z">
 <meta property="article:author" content="wbj_Lsz">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>算法题详解 - toLsz</title>
+  <title>vueWatch - toLsz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="算法题详解"></span>
+            <span id="subtitle" data-typed-text="vueWatch"></span>
           
         </div>
 
@@ -215,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-10-20 23:22" pubdate>
-           2024 年 10 月 20 日 , 晚上 11:22 , 星期日
+        <time datetime="2024-10-15 22:31" pubdate>
+           2024 年 10 月 15 日 , 晚上 10:31 , 星期二
         </time>
       </span>
     
@@ -228,7 +229,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          928 字
+          643 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
           <!-- compatible with older versions-->
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -277,45 +278,50 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">算法题详解</h1>
+            <h1 id="seo-header">vueWatch</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p>本篇文章讲述解决学习二分法过程中解决的一些问题，以及感悟；</p>
+<p>简单讲讲vue3的watch函数和:deep伪类选择器</p>
 </blockquote>
 <span id="more"></span>
 
-<h2 id="leetcode-33-搜索旋转排序数组"><a href="#leetcode-33-搜索旋转排序数组" class="headerlink" title="leetcode[33]搜索旋转排序数组"></a>leetcode[33]搜索旋转排序数组</h2><ul>
-<li><p>题目描述：给你旋转后的数组 nums（原本单调递增）和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p>
-</li>
-<li><p>示例 ：</p>
-<pre><code class="hljs">  输入：nums = [4,5,6,7,0,1,2], target = 0
-  输出：4
-</code></pre>
-</li>
-<li><p>要求：时间复杂度为 O(log n) </p>
-</li>
-<li><p>思路：</p>
-<ul>
-<li>其实看到O(log n)就应该下意识想到二分法;基本思路是先用二分法找到旋转点，然后再用二分法找到目标值；</li>
+
+
+<h2 id="watch-函数说明"><a href="#watch-函数说明" class="headerlink" title="watch 函数说明"></a>watch 函数说明</h2><ol>
+<li><code>watch</code> 是 Vue 3 的组合式 API 之一，用于监听响应式数据的变化</li>
+<li>它接收两个主要参数：<ul>
+<li>第一个参数：要监听的数据源（这里是一个返回 <code>route.params.id</code> 的箭头函数）</li>
+<li>第二个参数：当数据变化时触发的回调函数</li>
 </ul>
 </li>
-<li><p>代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">binarySearch</span>(<span class="hljs-params">nums, target</span>) &#123;<br>    <span class="hljs-comment">// 初始化双闭区间 [0, n-1] ，即 i, j 分别指向数组首元素、尾元素</span><br>    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, <br>    j = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>;<br>    <span class="hljs-comment">// 循环，当搜索区间为空时跳出（当 i &gt; j 时为空）</span><br>    <span class="hljs-keyword">while</span> (i &lt;= j) &#123;<br>        <span class="hljs-comment">// 计算中点索引 m ，使用 parseInt() 向下取整</span><br>        <span class="hljs-keyword">const</span> m = <span class="hljs-built_in">parseInt</span>(i + (j - i) / <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (nums[m] &lt; target)<br>            <span class="hljs-comment">// 此情况说明 target 在区间 [m+1, j] 中</span><br>            i = m + <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[m] &gt; target)<br>            <span class="hljs-comment">// 此情况说明 target 在区间 [i, m-1] 中</span><br>            j = m - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> m; <span class="hljs-comment">// 找到目标元素，返回其索引</span><br>    &#125;<br>    <span class="hljs-comment">// 未找到目标元素，返回 -1</span><br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-comment">//找到x之后，寻找target</span><br><span class="hljs-keyword">var</span> second_half=<span class="hljs-keyword">function</span>(<span class="hljs-params">nums,x,target</span>)&#123;<br>    <span class="hljs-comment">//判断target是否在元素大小区间内，如不，直接返回-1；</span><br>    <span class="hljs-keyword">if</span>(nums[x]&lt;target || nums[x+<span class="hljs-number">1</span>]&gt;target)&#123;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>    <span class="hljs-comment">//在区间内，与nums[0]比较，如果target大于其则必然在左部分]0,x]；</span><br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]&lt;=target)&#123;<br>        <span class="hljs-comment">//左部分二分查找target</span><br>       <span class="hljs-keyword">return</span> <span class="hljs-title function_">binarySearch</span>(nums.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>,x+<span class="hljs-number">1</span>),target)<br>    <span class="hljs-comment">//否则在右部分[x+1,nums.length-1]</span><br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">let</span> result=<span class="hljs-title function_">binarySearch</span>(nums.<span class="hljs-title function_">slice</span>(x+<span class="hljs-number">1</span>,nums.<span class="hljs-property">length</span>),target)<br>        <span class="hljs-comment">//分右部分存在与否两种情况</span><br>        <span class="hljs-keyword">if</span> (result===-<span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> result+x+<span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">var</span> search = <span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) &#123;<br>    <span class="hljs-comment">//通过两次176左右/196的两个失败案例[1] 1和 [1,3] 3 补充如下两次特殊情况</span><br>    <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]==target)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    &#125;<br>    <span class="hljs-keyword">if</span>(nums[nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span>]==target)&#123;<br>        <span class="hljs-keyword">return</span> nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">let</span> left=<span class="hljs-number">0</span><br>    <span class="hljs-keyword">let</span> right=nums.<span class="hljs-property">length</span>-<span class="hljs-number">1</span><br>    <span class="hljs-keyword">let</span> x=<span class="hljs-number">0</span>   <span class="hljs-comment">//最大元素的下标x,x+1就是最小元素的下标</span><br><br>    <span class="hljs-comment">//根据单调性判断K处,只有两个元素会出现异常不满足小于右边或大于左边；下标分别为x,x+1</span><br>    <span class="hljs-keyword">while</span>(left&lt;=right)&#123;<br>        <span class="hljs-keyword">let</span> mid=(left+right)&gt;&gt;<span class="hljs-number">1</span><br>        <span class="hljs-comment">//最大元素的下标x</span><br>        <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>] ||nums[mid]&lt;nums[mid-<span class="hljs-number">1</span>])&#123;<br>            x=nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>]?<span class="hljs-attr">mid</span>:mid-<span class="hljs-number">1</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_">second_half</span>(nums,x,target)    <br>        <span class="hljs-comment">//mid在右部分        </span><br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[<span class="hljs-number">0</span>])&#123;<br>            right=mid-<span class="hljs-number">1</span><br>        <span class="hljs-comment">//mid在左部分</span><br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            left=mid+<span class="hljs-number">1</span><br>        &#125;<br><br>    &#125;<br>    <span class="hljs-comment">//根据不通过的案列[1,3,5]  3 answer:-1;提醒我应该先判断词列表是否翻转过；</span><br>    <span class="hljs-comment">//如果上个循环结束还没有得出结果说明这个列表可能没有翻转过（也可以理解为在0出翻转，为了节约时间，我们把这个操作移到前面）</span><br>    <span class="hljs-comment">//但是问题在于似乎无法在时间复杂度为logn的前提下判断一个数组是单调递增的，所以只能放在while循环后面，说明词列表没有反转</span><br>    <span class="hljs-keyword">return</span>   <span class="hljs-title function_">binarySearch</span>(nums,target)<br>    <br>&#125;;<br><br></code></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二分总结"><a href="#二分总结" class="headerlink" title="二分总结"></a>二分总结</h2><ul>
-<li>特征：二分法的使用场景，其实比较受限，最明显的特点是：</li>
-</ul>
-<ol>
-<li>绝大情况，查找目标具有单调性质（单调递增、单调递减）：整个数组或者类似旋转数组其分成两部分具有单调性；</li>
-<li>有上下边界，并且最好能够通过index下标访问元素</li>
-<li>要求时间复杂度为Logn</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-rotated-sorted-array/solutions/996781/cong-ji-ben-de-er-fen-fa-shuo-qi-ru-he-a-hof5/">参考</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">watch</span>(<br>  <span class="hljs-function">() =&gt;</span> route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span>,  <span class="hljs-comment">// 监听路由参数中的id变化</span><br>  <span class="hljs-function">(<span class="hljs-params">newId</span>) =&gt;</span> &#123;           <span class="hljs-comment">// newId 是变化后的新值</span><br>    <span class="hljs-keyword">if</span> (newId) &#123;<br>      <span class="hljs-title function_">fetchData</span>()        <span class="hljs-comment">// 当id变化时重新获取数据</span><br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;重新获取推荐视频&quot;</span>)<br>    &#125;<br>  &#125;<br>)<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">fetchData</span> = (<span class="hljs-params"></span>) =&gt; &#123;<br>  <span class="hljs-title function_">axios</span>(&#123;<br>    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/videoDetail&#x27;</span>,<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;get&#x27;</span>,<br>    <span class="hljs-attr">params</span>: &#123; <span class="hljs-attr">id</span>: route.<span class="hljs-property">params</span>.<span class="hljs-property">id</span> &#125;<br>  &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">&#123; data &#125;</span>) =&gt;</span> &#123;<br>    videoInfo.<span class="hljs-property">value</span> = data.<span class="hljs-property">result</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;视频详情数据&#x27;</span>, data.<span class="hljs-property">result</span>)<br>  &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这是一个典型的用例，常用于需要根据路由参数重新获取数据的场景。</p>
 <ul>
-<li>基础模版：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = start<br><span class="hljs-keyword">let</span> right = end<br><span class="hljs-keyword">let</span> mid<br><span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>    mid = (left + right) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> (array[mid] === target) &#123;<br>        <span class="hljs-keyword">return</span> result <span class="hljs-comment">//或者 break </span><br>    &#125;<br>    <span class="hljs-keyword">if</span> (array[mid] &lt; target) &#123;<br>        left = mid + <span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">if</span> (array[mid] &gt; target) &#123;<br>        right = mid - <span class="hljs-number">1</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><code>newId</code> 在这里指的是路由参数中的 <code>id</code> 的新值</li>
+<li>这段代码的作用是监听视频的 ID 变化（通常在 URL 中），当用户切换到不同的视频时：<ol>
+<li>路由参数 <code>id</code> 发生变化</li>
+<li>watch 检测到变化，触发回调函数</li>
+<li>执行 <code>fetchData()</code> 获取新视频的推荐内容</li>
+</ol>
+</li>
+</ul>
+<h3 id="key动态监测变化，自动重新渲染组件"><a href="#key动态监测变化，自动重新渲染组件" class="headerlink" title="key动态监测变化，自动重新渲染组件"></a>key动态监测变化，自动重新渲染组件</h3><ul>
+<li>接着上面的例子，当检测到路由id变化后通过fetchData重新获数据后，还需要通过组件标签中的key属性实现组件自动重新渲染；如下例子所示，路由变化后嵌入的视频会自动更新；<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;video-play&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span></span><br><span class="hljs-tag">     <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;videoInfo.videoSrc&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;videoInfo.videoSrc&quot;</span></span><br><span class="hljs-tag">    &gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="deep-选择器"><a href="#deep-选择器" class="headerlink" title=":deep() 选择器"></a>:deep() 选择器</h2><p><code>:deep()</code> 是 Vue 3 中的深度选择器，用于穿透 scoped CSS 的作用域限制。</p>
+<ol>
+<li>当使用 <code>&lt;style scoped&gt;</code> 时，Vue 会为组件的元素添加一个唯一的属性（如 data-v-hash）</li>
+<li>样式会被编译为带有这个属性选择器的形式，从而将样式限制在当前组件内</li>
+<li>但有时我们需要修改子组件或第三方组件的内部元素样式，这时就需要 <code>:deep()</code></li>
+</ol>
+<ul>
+<li>另外值得注意的事，:deep属性最好选择class，不要选择组件名</li>
+<li>使用示例<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 不使用 :deep 时（只能影响当前组件的元素）</span><br><span class="hljs-selector-class">.tabs</span> <span class="hljs-selector-class">.van-tab</span> &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>&#125;<br><br><span class="hljs-comment">// 使用 :deep 后（可以影响子组件内部元素）</span><br><span class="hljs-selector-class">.tabs</span> :<span class="hljs-selector-tag">deep</span>(.van-tab) &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>&#125;<br></code></pre></td></tr></table></figure>
+比如说在vue项目中修改组件中引入的vant组件：<code>:deep(.van-tab--active)</code> 就是为了修改 Vant 组件库中 Tab 组件的激活状态样式。</li>
 </ul>
 
                 
@@ -325,27 +331,13 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
+        <a href="/tags/Vue/" class="print-no-link">#Vue</a>
+      
     </div>
-  
   
 </div>
 
@@ -355,8 +347,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>算法题详解</div>
-      <div>https://tolsz.me/2024/10/20/算法题详解/</div>
+      <div>vueWatch</div>
+      <div>https://tolsz.me/2024/10/15/vueWatch&amp;deep/</div>
     </div>
     <div class="license-meta">
       
@@ -368,7 +360,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年10月20日</div>
+          <div>2024年10月15日</div>
         </div>
       
       
@@ -399,6 +391,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2024/10/16/vueVite/" title="vueVite">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">vueVite</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
