@@ -19,21 +19,40 @@
   <meta name="author" content="wbj_Lsz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文讲述如何使用Vercel部署前端项目">
+    <meta name="description" content="摘要测试两款开源OCR工具以及百度飞桨在线产品PP-OCRv4的识别效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="部署项目">
-<meta property="og:url" content="https://tolsz.me/2024/11/15/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:title" content="testOCR">
+<meta property="og:url" content="https://tolsz.me/2025/01/02/testOCR/index.html">
 <meta property="og:site_name" content="toLsz">
-<meta property="og:description" content="本文讲述如何使用Vercel部署前端项目">
+<meta property="og:description" content="摘要测试两款开源OCR工具以及百度飞桨在线产品PP-OCRv4的识别效果">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-15T09:17:50.000Z">
-<meta property="article:modified_time" content="2024-12-18T09:53:18.380Z">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-15.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-7.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-13.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-14.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-16.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-17.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-10.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-12.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-18.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-27.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-29.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-21.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-28.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-23.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-22.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-24.png">
+<meta property="og:image" content="https://tolsz.me/testOCR/images/readme/image-30.png">
+<meta property="article:published_time" content="2025-01-02T03:14:55.000Z">
+<meta property="article:modified_time" content="2025-01-02T03:30:24.055Z">
 <meta property="article:author" content="wbj_Lsz">
+<meta property="article:tag" content="OCR">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tolsz.me/testOCR/images/readme/image-15.png">
   
   
   
-  <title>部署项目 - toLsz</title>
+  <title>testOCR - toLsz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="部署项目"></span>
+            <span id="subtitle" data-typed-text="testOCR"></span>
           
         </div>
 
@@ -215,8 +234,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-15 17:17" pubdate>
-           2024 年 11 月 15 日 , 下午 05:17 , 星期五
+        <time datetime="2025-01-02 11:14" pubdate>
+           2025 年 01 月 02 日 , 上午 11:14 , 星期四
         </time>
       </span>
     
@@ -228,7 +247,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          765 字
+          759 字
         
       </span>
     
@@ -277,63 +296,83 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">部署项目</h1>
+            <h1 id="seo-header">testOCR</h1>
             
             
               <div class="markdown-body">
                 
                 <blockquote>
-<p>本文讲述如何使用Vercel部署前端项目</p>
+<p>摘要<br>测试两款开源OCR工具以及百度飞桨在线产品PP-OCRv4的识别效果</p>
 </blockquote>
 <span id="more"></span>
 
-
-<h2 id="上线前端静态项目"><a href="#上线前端静态项目" class="headerlink" title="上线前端静态项目"></a>上线前端静态项目</h2><h4 id="vercel"><a href="#vercel" class="headerlink" title="vercel"></a>vercel</h4><ol>
-<li>登录<a target="_blank" rel="noopener" href="https://vercel.com/new">https://vercel.com/new</a> 注册账号（需要绑定手机号输入验证码）并绑定github</li>
-<li>将项目上传到github上，不要上传依赖node_modules，在 Vercel 部署项目时会自动安装项目依赖、执行构建命令，并将构建结果上传到其服务器。</li>
-<li>在vercel中new project，导入相应的仓库，然后vercel会自动识别框架，你只需要点击下一步和deploy即可部署成功</li>
-<li>部署成功后可在vercel中看到项目的域名，状态等信息<ol>
-<li>默认域名格式：项目名-github账号名-projects.vercel.app</li>
-</ol>
-</li>
-<li>在 Vercel 的控制面板中，可以管理项目，包括查看日志、配置环境变量、设置 HTTPS 等，还可以将自定义域名绑定到 Vercel 项目。</li>
-<li>如果想修改项目，直接本地修改代码然后上传到github即可</li>
-<li>最大的问题就是域名vercel.app在国内背墙了，无法访问，解决办法有如下两种<ol>
-<li>换一个国内可以访问的域名然后通过进行cloudflare解析。<ul>
-<li>如果是使用国内的域名需要Cloudflare解析海外的服务器，因为国内的阿里云腾讯云免费DNS不支持直接解析海外服务器,步骤如下：<ol>
-<li>注册 Cloudfare</li>
-<li>把自己购买的域名添加到cloudfare，然后选择免费计划。</li>
-<li>点进该域名的配置面板，增加 DNS 配置。（76.223.126.88 是 vercel 贴心为墙内用户准备的 IP。添加@记录后，保存后显示的是你的域名.）</li>
-<li>把cloudflare名称服务器下的两行代码，直接复制粘贴到你所购买域名平台相应的DNS管理中修改，将域名的DNS解析服务转移到Cloudflare;需要稍等一会（记住DNS的相关操作是具有迟缓性的，也许半个小时甚至更久才能起作用，不要心急）</li>
-<li>转移需要一些时间，等邮箱通知激活成功；</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>github学生包还有很多权益，其中就包括很多免费的域名，全球可访；</li>
-</ol>
-</li>
-</ol>
-<h4 id="利用github学生包免费获得https-get-tech-的-tech域名"><a href="#利用github学生包免费获得https-get-tech-的-tech域名" class="headerlink" title="利用github学生包免费获得https://get.tech 的.tech域名"></a>利用github学生包免费获得<a target="_blank" rel="noopener" href="https://get.tech/">https://get.tech</a> 的.tech域名</h4><ol>
-<li>进入官网，选择一个域名mylsz.tech，然后绑定github,价格会变成0元，购买；时效1年</li>
-<li>购买前需要注册账号<ol>
-<li>谷歌账号、</li>
-<li>范式：tech</li>
-</ol>
-</li>
-<li>namecheap可以直接在其中进行域名解析绑定服务器，此网站也可以，不过它是通过邮箱的方式告诉你地址（刚开始我还纳闷为什么一个卖域名的网站居然没有解析服务）<ol>
-<li>.tech是在全球可访问的，无需使用cloudflare，直接通过<a target="_blank" rel="noopener" href="https://controlpanel.tech/servlet/ViewDomainServlet?orderid=116516920&referrerkey=MmNvTVlSTzYvWEZMUzRLRTJLdHdJczM3cTVtc3NyT1lnWWpiaEhsWW9nbzRvQXE5L1gxTllYR0QxRk1rVHJsV3V1VjdiOUZ2Wk5nPQ==#domorder">此链接</a> 管理DNS解析域名：76.223.126.88  是 vercel 贴心为墙内用户准备的 IP（不要用vercel控制台提供的76.76.21.21，这个国内访问不了）。添加A记录后，DNS缓存需要稍等一会</li>
-</ol>
-</li>
-</ol>
 <ul>
-<li>参考<ul>
-<li><a target="_blank" rel="noopener" href="https://www.nbmao.com/archives/6702">https://www.nbmao.com/archives/6702</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ll_renlong/article/details/141395626">https://blog.csdn.net/ll_renlong/article/details/141395626</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7383894687302434825#heading-5">https://juejin.cn/post/7383894687302434825#heading-5</a></li>
+<li><p>先说结论：百度的飞桨在线产品<a target="_blank" rel="noopener" href="https://aistudio.baidu.com/community/app/91660/webUI">PP-OCRv4</a> 对文字、数字、排版的识别都很不错；开源paddleOCR和Umi-OCR对文字、数字的识别效果都还可以，但是对排版的识别效果都不太好，二者差不多，相同与不同如下；</p>
+</li>
+<li><p>相同点：</p>
+<ul>
+<li>都可批量OCR</li>
+<li>对文本、数字等等效果比较好，但对布局格式识别不太行。</li>
+<li>对图片、pdf等文件都可以识别</li>
+</ul>
+</li>
+<li><p>不同之处</p>
+<ul>
+<li>Umi-OCR通过应用程序鼠标点击进行操作</li>
+<li>PaddleOCR通过命令行&#x2F;python进行操作,输出结果中含有置信度</li>
+<li>Umi-OCR可识别二维码</li>
+</ul>
+</li>
+<li><p>如下是测试过程：</p>
+</li>
+</ul>
+<h3 id="Umi-OCR"><a href="#Umi-OCR" class="headerlink" title="Umi-OCR"></a><a target="_blank" rel="noopener" href="https://github.com/hiroi-sora/Umi-OCR">Umi-OCR</a></h3><ul>
+<li>设置规则<ul>
+<li>多栏：自动识别多栏布局输出</li>
+<li>单栏：不识别布局，从上往下按照一行行的顺序识别和输出</li>
 </ul>
 </li>
 </ul>
+<p><img src="/./testOCR/images/readme/image-15.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h4 id="纯文本"><a href="#纯文本" class="headerlink" title="纯文本"></a>纯文本</h4><ul>
+<li>效果很好，连格式几乎都一样，除了有些缩进和换行被忽略了；<br><img src="/./testOCR/images/readme/image-7.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+</ul>
+<h4 id="发票1"><a href="#发票1" class="headerlink" title="发票1"></a>发票1</h4><p><img src="/./testOCR/images/readme/image-13.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>多栏-按自然段换行：最上面盖章处，识别有少许偏差，上面中间部分一行行识别和输出效果还可以，下面列与列之间间隙较大，就变成了一列列识别和输出，识别效果还行，但这样的输出格式导致键与值之间的错位，不方便对应；最右下角可能是光线不好，没识别出来；</li>
+</ul>
+<p><img src="/./testOCR/images/readme/image-14.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>多栏，总是换行：识别效果和顺序和上方差不多，但每识别一段就换行；</li>
+</ul>
+<p><img src="/./testOCR/images/readme/image-16.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>单栏：自然换行：从上往下按照一行行的顺序识别和输出，但是遇到一些格式不一样的一起识别就会出现顺序问题</li>
+</ul>
+<p><img src="/./testOCR/images/readme/image-17.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h4 id="发票2"><a href="#发票2" class="headerlink" title="发票2"></a>发票2</h4><p><img src="/./testOCR/images/readme/image-10.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>多栏-按自然段换行：尽管除了少数和印章重叠的字识别有误之外（蓝色圈出），文字和数字都识别出来了，但是识别和输出格式和输出顺序很糟糕，整体上也是从左向右一列列识别和输出，但他并不是以每列相同的宽度去读取的，像圈1和圈4所在列就比较规则，所以它也能准确读出来，但他识别有些列的宽度也并不能包含相应格式的数据保证他们的连贯性；（如图中圈3）</li>
+</ul>
+<p><img src="/./testOCR/images/readme/image-12.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>单栏：自然换行 ：从上往下按照一行行的顺序识别和输出，语意不连贯，键值不对应，盖章文字未识别出；</li>
+</ul>
+<p><img src="/./testOCR/images/readme/image-18.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<ul>
+<li>总结：对纯文本效果比较好，但对布局格式识别不太行；</li>
+</ul>
+<h3 id="开源PaddleOCR"><a href="#开源PaddleOCR" class="headerlink" title="开源PaddleOCR"></a><a target="_blank" rel="noopener" href="https://paddlepaddle.github.io/PaddleOCR/latest/ppocr/quick_start.html#3">开源PaddleOCR</a></h3><ul>
+<li>总结：和前者效果差不多：对纯文本效果比较好，但对布局格式识别不太行；</li>
+</ul>
+<h4 id="纯文本-1"><a href="#纯文本-1" class="headerlink" title="纯文本"></a>纯文本</h4><p><img src="/./testOCR/images/readme/image-27.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/./testOCR/images/readme/image-29.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h4 id="发票1-1"><a href="#发票1-1" class="headerlink" title="发票1"></a>发票1</h4><p><img src="/./testOCR/images/readme/image-21.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h4 id="发票2-1"><a href="#发票2-1" class="headerlink" title="发票2"></a>发票2</h4><p><img src="/./testOCR/images/readme/image-28.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h3 id="PP-OCRv4-在线"><a href="#PP-OCRv4-在线" class="headerlink" title="PP-OCRv4 在线"></a><a target="_blank" rel="noopener" href="https://aistudio.baidu.com/community/app/91660/webUI">PP-OCRv4 在线</a></h3><ul>
+<li>对文本、数字、排版格式等等识别的都很好；唯一缺点就是印章重叠处的文字识别不太精准；</li>
+</ul>
+<h4 id="纯文本-2"><a href="#纯文本-2" class="headerlink" title="纯文本"></a>纯文本</h4><p><img src="/./testOCR/images/readme/image-23.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<h4 id="发票"><a href="#发票" class="headerlink" title="发票"></a>发票</h4><p><img src="/./testOCR/images/readme/image-22.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/./testOCR/images/readme/image-24.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/./testOCR/images/readme/image-30.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
 
                 
               </div>
@@ -343,6 +382,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/OCR/" class="print-no-link">#OCR</a>
+      
+    </div>
+  
 </div>
 
 
@@ -351,8 +397,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>部署项目</div>
-      <div>https://tolsz.me/2024/11/15/部署项目/</div>
+      <div>testOCR</div>
+      <div>https://tolsz.me/2025/01/02/testOCR/</div>
     </div>
     <div class="license-meta">
       
@@ -364,7 +410,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年11月15日</div>
+          <div>2025年1月2日</div>
         </div>
       
       
@@ -396,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/02/testOCR/" title="testOCR">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">testOCR</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/10/20/router/" title="router">
-                        <span class="hidden-mobile">router</span>
+                      <a href="/2024/11/15/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" title="部署项目">
+                        <span class="hidden-mobile">部署项目</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
