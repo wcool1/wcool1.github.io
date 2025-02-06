@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ExtractThinker</title>
+    <link href="/2025/02/06/ExtractThinker/"/>
+    <url>/2025/02/06/ExtractThinker/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>摘要</p></blockquote><span id="more"></span><ul><li>流程：doclingOCR文件生成Markdown文本——llm进行识别并判断是自定义类型中的哪一种——llm进行提取相应类型所需的数据——存入数据库</li><li>参考、<ul><li><a href="https://pub.towardsai.net/building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker-6ab60b495751">https://pub.towardsai.net/building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker-6ab60b495751</a></li><li><a href="https://github.com/enoch3712/ExtractThinker">https://github.com/enoch3712/ExtractThinker</a></li></ul></li><li>效果如下</li></ul><p><img src="/2025/02/06/ExtractThinker/image.png" alt="alt text"></p><p><img src="/2025/02/06/ExtractThinker/image-1.png" alt="alt text"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>极空间探索</title>
     <link href="/2025/01/23/%E6%9E%81%E7%A9%BA%E9%97%B4/"/>
     <url>/2025/01/23/%E6%9E%81%E7%A9%BA%E9%97%B4/</url>
