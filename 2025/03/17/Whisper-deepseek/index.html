@@ -19,24 +19,28 @@
   <meta name="author" content="wbj_Lsz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="流程：doclingOCR文件生成Markdown文本——llm进行识别并判断是自定义类型中的哪一种——llm进行提取相应类型所需的数据——存入数据库 参考、 https:&#x2F;&#x2F;pub.towardsai.net&#x2F;building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker">
+    <meta name="description" content="whispher转写会议音频+deepseek总结项目记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ExtractThinker">
-<meta property="og:url" content="https://tolsz.me/2025/02/06/ExtractThinker/index.html">
+<meta property="og:title" content="Whisper&amp;deepseek">
+<meta property="og:url" content="https://tolsz.me/2025/03/17/Whisper-deepseek/index.html">
 <meta property="og:site_name" content="toLsz">
-<meta property="og:description" content="流程：doclingOCR文件生成Markdown文本——llm进行识别并判断是自定义类型中的哪一种——llm进行提取相应类型所需的数据——存入数据库 参考、 https:&#x2F;&#x2F;pub.towardsai.net&#x2F;building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker">
+<meta property="og:description" content="whispher转写会议音频+deepseek总结项目记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tolsz.me/2025/02/06/ExtractThinker/image.png">
-<meta property="og:image" content="https://tolsz.me/2025/02/06/ExtractThinker/image-1.png">
-<meta property="article:published_time" content="2025-02-06T10:31:28.000Z">
-<meta property="article:modified_time" content="2025-03-17T08:36:39.100Z">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200862032.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200884249.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201037170.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201533116.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201699988.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201750479.png">
+<meta property="article:published_time" content="2025-03-17T08:37:58.000Z">
+<meta property="article:modified_time" content="2025-03-17T10:32:22.422Z">
 <meta property="article:author" content="wbj_Lsz">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tolsz.me/2025/02/06/ExtractThinker/image.png">
+<meta name="twitter:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200862032.png">
   
   
   
-  <title>ExtractThinker - toLsz</title>
+  <title>Whisper&amp;deepseek - toLsz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ExtractThinker"></span>
+            <span id="subtitle" data-typed-text="Whisper&amp;deepseek"></span>
           
         </div>
 
@@ -218,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-02-06 18:31" pubdate>
-           2025 年 02 月 06 日 , 晚上 06:31 , 星期四
+        <time datetime="2025-03-17 16:37" pubdate>
+           2025 年 03 月 17 日 , 下午 04:37 , 星期一
         </time>
       </span>
     
@@ -231,7 +235,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          75 字
+          322 字
         
       </span>
     
@@ -243,7 +247,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -280,24 +284,46 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ExtractThinker</h1>
+            <h1 id="seo-header">Whisper&amp;deepseek</h1>
             
             
               <div class="markdown-body">
                 
-                <span id="more"></span>
+                <blockquote>
+<p>whispher转写会议音频+deepseek总结项目记录</p>
+</blockquote>
+<span id="more"></span>
 
 <ul>
-<li>流程：doclingOCR文件生成Markdown文本——llm进行识别并判断是自定义类型中的哪一种——llm进行提取相应类型所需的数据——存入数据库</li>
-<li>参考、<ul>
-<li><a target="_blank" rel="noopener" href="https://pub.towardsai.net/building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker-6ab60b495751">https://pub.towardsai.net/building-an-on-premise-document-intelligence-stack-with-docling-ollama-phi-4-extractthinker-6ab60b495751</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/enoch3712/ExtractThinker">https://github.com/enoch3712/ExtractThinker</a></li>
+<li>目前通过脚本实现与用户的简单交互：.&#x2F;start.sh 一行命令回车进行录音，再回车结束录音后，Whisper进行转写，deepseek进行总结；效果如下</li>
 </ul>
+<p><img src="/2025/03/17/Whisper-deepseek/1742200862032.png" srcset="/img/loading.gif" lazyload alt="1742200862032"></p>
+<p><img src="/2025/03/17/Whisper-deepseek/1742200884249.png" srcset="/img/loading.gif" lazyload alt="1742200884249"></p>
+<p>结果生成在&#x2F;data&#x2F;VAproject&#x2F;output&#x2F;时间戳目录下</p>
+<p><img src="/2025/03/17/Whisper-deepseek/1742201037170.png" srcset="/img/loading.gif" lazyload alt="1742201037170"></p>
+<p>1h40min会议音频测试结果展示在文章末尾，用户也可以通过如下步骤自定义生成docx文件的模版样式（通过pypandoc库实现）；</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 打开office word/wps，新建一个空白docx文档<br><span class="hljs-bullet">2.</span> 设置想要的样式，比如标题1、标题2、正文等<br><span class="hljs-bullet">3.</span> 保存样式：修改原样式，勾选基于此模版的新文档<br><span class="hljs-bullet">4.</span> 将文件命名为reference.docx，上传到到盒子中localApp.py的同级目录下<br></code></pre></td></tr></table></figure>
+
+
+
+
+<ul>
+<li><p>项目整体达到可使用的水平，但还现存一些模型能力带来的小问题</p>
+<ol>
+<li>极少数情况下，某些段落总结中会夹杂着少许英文，添加提示词强调中文输出无用，不明显；</li>
+<li>通过修改模型参数generation_mode&#x3D;’greedy’为“penalty_sample”，可以避免无限输出重复内容的问题，但少数情况下，模型并不按照我的提示词模版进行输出；</li>
+</ol>
+<p>  <img src="/2025/03/17/Whisper-deepseek/1742201533116.png" srcset="/img/loading.gif" lazyload alt="1742201533116"><br>  <img src="/2025/03/17/Whisper-deepseek/1742201699988.png" srcset="/img/loading.gif" lazyload alt="1742201699988"><br>  <img src="/2025/03/17/Whisper-deepseek/1742201750479.png" srcset="/img/loading.gif" lazyload alt="1742201750479"></p>
 </li>
-<li>效果如下</li>
 </ul>
-<p><img src="/2025/02/06/ExtractThinker/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
-<p><img src="/2025/02/06/ExtractThinker/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+
+
+	<div class="row">
+    <embed src="13min.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 
                 
               </div>
@@ -315,8 +341,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ExtractThinker</div>
-      <div>https://tolsz.me/2025/02/06/ExtractThinker/</div>
+      <div>Whisper&amp;deepseek</div>
+      <div>https://tolsz.me/2025/03/17/Whisper-deepseek/</div>
     </div>
     <div class="license-meta">
       
@@ -328,7 +354,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年2月6日</div>
+          <div>2025年3月17日</div>
         </div>
       
       
@@ -360,18 +386,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/02/13/Ollama-minicpm-v/" title="Ollama-minicpm-v">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Ollama-minicpm-v</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/23/%E6%9E%81%E7%A9%BA%E9%97%B4/" title="极空间探索">
-                        <span class="hidden-mobile">极空间探索</span>
+                      <a href="/2025/02/17/OCR%E9%A1%B9%E7%9B%AE%E5%88%9D%E6%AD%A5%E6%B5%8B%E8%AF%95%E6%95%88%E6%9E%9C/" title="项目预处理初步测试效果">
+                        <span class="hidden-mobile">项目预处理初步测试效果</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
