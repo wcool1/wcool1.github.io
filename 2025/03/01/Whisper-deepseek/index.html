@@ -22,21 +22,21 @@
     <meta name="description" content="whispher转写会议音频+deepseek总结项目记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Whisper&amp;deepseek">
-<meta property="og:url" content="https://tolsz.me/2025/03/17/Whisper-deepseek/index.html">
+<meta property="og:url" content="https://tolsz.me/2025/03/01/Whisper-deepseek/index.html">
 <meta property="og:site_name" content="toLsz">
 <meta property="og:description" content="whispher转写会议音频+deepseek总结项目记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200862032.png">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200884249.png">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201037170.png">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201533116.png">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201699988.png">
-<meta property="og:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742201750479.png">
-<meta property="article:published_time" content="2025-03-17T08:37:58.000Z">
-<meta property="article:modified_time" content="2025-03-18T04:45:56.598Z">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742200862032.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742200884249.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742201037170.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742201533116.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742201699988.png">
+<meta property="og:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742201750479.png">
+<meta property="article:published_time" content="2025-03-01T08:37:58.000Z">
+<meta property="article:modified_time" content="2025-03-19T02:11:50.409Z">
 <meta property="article:author" content="wbj_Lsz">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tolsz.me/2025/03/17/Whisper-deepseek/1742200862032.png">
+<meta name="twitter:image" content="https://tolsz.me/2025/03/01/Whisper-deepseek/1742200862032.png">
   
   
   
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-03-17 16:37" pubdate>
-           2025 年 03 月 17 日 , 下午 04:37 , 星期一
+        <time datetime="2025-03-01 16:37" pubdate>
+           2025 年 03 月 01 日 , 下午 04:37 , 星期六
         </time>
       </span>
     
@@ -297,10 +297,10 @@
 <ul>
 <li>目前通过脚本实现与用户的简单交互：.&#x2F;start.sh 一行命令回车进行录音，再回车结束录音后，Whisper进行转写，deepseek进行总结；效果如下</li>
 </ul>
-<p><img src="/2025/03/17/Whisper-deepseek/1742200862032.png" srcset="/img/loading.gif" lazyload alt="1742200862032"></p>
-<p><img src="/2025/03/17/Whisper-deepseek/1742200884249.png" srcset="/img/loading.gif" lazyload alt="1742200884249"></p>
+<p><img src="/2025/03/01/Whisper-deepseek/1742200862032.png" srcset="/img/loading.gif" lazyload alt="1742200862032"></p>
+<p><img src="/2025/03/01/Whisper-deepseek/1742200884249.png" srcset="/img/loading.gif" lazyload alt="1742200884249"></p>
 <p>结果生成在&#x2F;data&#x2F;VAproject&#x2F;output&#x2F;时间戳目录下</p>
-<p><img src="/2025/03/17/Whisper-deepseek/1742201037170.png" srcset="/img/loading.gif" lazyload alt="1742201037170"></p>
+<p><img src="/2025/03/01/Whisper-deepseek/1742201037170.png" srcset="/img/loading.gif" lazyload alt="1742201037170"></p>
 <p>1h40min会议音频测试结果展示在文章末尾，用户也可以通过如下步骤自定义生成docx文件的模版样式（通过pypandoc库实现）；</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 打开office word/wps，新建一个空白docx文档<br><span class="hljs-bullet">2.</span> 设置想要的样式，比如标题1、标题2、正文等<br><span class="hljs-bullet">3.</span> 保存样式：修改原样式，勾选基于此模版的新文档<br><span class="hljs-bullet">4.</span> 将文件命名为reference.docx，上传到到盒子中localApp.py的同级目录下<br></code></pre></td></tr></table></figure>
 
@@ -310,7 +310,7 @@
 <li>极少数情况下，某些段落总结中会夹杂着少许英文，添加提示词强调中文输出无用，不明显；</li>
 <li>通过修改模型参数generation_mode&#x3D;’greedy’为“penalty_sample”，可以避免无限输出重复内容的问题，但少数情况下，模型并不按照我的提示词模版进行输出；</li>
 </ol>
-<p><img src="/2025/03/17/Whisper-deepseek/1742201533116.png" srcset="/img/loading.gif" lazyload alt="1742201533116"><br><img src="/2025/03/17/Whisper-deepseek/1742201699988.png" srcset="/img/loading.gif" lazyload alt="1742201699988"><br><img src="/2025/03/17/Whisper-deepseek/1742201750479.png" srcset="/img/loading.gif" lazyload alt="1742201750479"></p>
+<p><img src="/2025/03/01/Whisper-deepseek/1742201533116.png" srcset="/img/loading.gif" lazyload alt="1742201533116"><br><img src="/2025/03/01/Whisper-deepseek/1742201699988.png" srcset="/img/loading.gif" lazyload alt="1742201699988"><br><img src="/2025/03/01/Whisper-deepseek/1742201750479.png" srcset="/img/loading.gif" lazyload alt="1742201750479"></p>
 </li>
 </ul>
 
@@ -339,7 +339,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Whisper&amp;deepseek</div>
-      <div>https://tolsz.me/2025/03/17/Whisper-deepseek/</div>
+      <div>https://tolsz.me/2025/03/01/Whisper-deepseek/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年3月17日</div>
+          <div>2025年3月1日</div>
         </div>
       
       
