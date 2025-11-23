@@ -22,17 +22,17 @@
     <meta name="description" content="本篇文章讲述搭建博客的原因、过程以及使用hexo的技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="create my blog">
-<meta property="og:url" content="https://tolsz.me/2024/09/23/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:url" content="https://tolsz.site/2024/09/23/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="toLsz">
 <meta property="og:description" content="本篇文章讲述搭建博客的原因、过程以及使用hexo的技巧">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tolsz.me/img/cover/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2.png">
+<meta property="og:image" content="https://tolsz.site/img/cover/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2.png">
 <meta property="article:published_time" content="2024-09-23T15:21:29.000Z">
 <meta property="article:modified_time" content="2025-01-02T07:02:30.748Z">
 <meta property="article:author" content="wbj_Lsz">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tolsz.me/img/cover/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2.png">
+<meta name="twitter:image" content="https://tolsz.site/img/cover/%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2.png">
   
   
   
@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"tolsz.me","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"tolsz.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -100,7 +100,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>toLsz</strong>
+      <strong>toLsz&#39;blog</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -339,7 +339,7 @@
 <li><p>安装hexo-deployer-git插件实现自动远程部署：npm install hexo-deployer-git –save</p>
 </li>
 <li><p>然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</p>
-<pre><code>  deploy:
+<pre><code class="hljs">  deploy:
      type: git
      repository: git@github.com:用户名/用户名.github.io.git
      branch: main
@@ -360,7 +360,7 @@
 </ul>
 </li>
 <li><p>常用命令：</p>
-<pre><code>  hexo new &quot;name&quot;       # 新建文章
+<pre><code class="hljs">  hexo new &quot;name&quot;       # 新建文章
   hexo new page &quot;name&quot;  # 新建页面
   hexo g                # 生成页面
   hexo d                # 部署
@@ -376,11 +376,11 @@
 </li>
 <li><p>图片操作：</p>
 <ol>
-<li>插入图片时需要考虑其大小以及排版在此博客系统上的效果，一般使用html标签调整，设置width&#x2F;height为百分比；eg:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://alexcld.com/images/pengyuyan.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;25%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;25%&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>插入图片时需要考虑其大小以及排版在此博客系统上的效果，一般使用html标签调整，设置width&#x2F;height为百分比；eg:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">center</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://alexcld.com/images/pengyuyan.jpg&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;25%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;25%&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">center</span>&gt;</span><br><br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li><p>实际上，hexo渲染一篇post的工作流程是：</p>
-<pre><code>  拿到一个markdown文件，
+<pre><code class="hljs">  拿到一个markdown文件，
 
   根据这个文件的layout类型，
 
@@ -401,14 +401,14 @@
 </li>
 </ol>
 <h2 id="hexo使用技巧"><a href="#hexo使用技巧" class="headerlink" title="hexo使用技巧"></a>hexo使用技巧</h2><ol>
-<li>设置文章摘要和标签操作举例如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hello hexo markdown</span><br><span class="line">date: </span><br><span class="line">tags:</span><br><span class="line">- hello</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">我是短小精悍的文章摘要(๑•̀ㅂ•́) ✧</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">紧接着文章摘要的正文内容</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>设置文章摘要和标签操作举例如下：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">hello</span> <span class="hljs-string">hexo</span> <span class="hljs-string">markdown</span><br><span class="hljs-attr">date:</span> <br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">hello</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">我是短小精悍的文章摘要(๑•̀ㅂ•́)</span> <span class="hljs-string">✧</span><br><br><span class="hljs-string">&lt;!--</span> <span class="hljs-string">more</span> <span class="hljs-string">--&gt;</span><br><br><span class="hljs-string">紧接着文章摘要的正文内容</span><br><br><br></code></pre></td></tr></table></figure></li>
 <li>资源引用：除了url的绝对引用外，相对引用可以使用 Hexo 提供的资源文件夹功能:使用文本编辑器打开站点根目录下的 _ config.yml 文件，将 post_asset_folder 值设置为 true。Hexo 将会在我们每一次通过 hexo new title 命令创建新文章时自动创建一个同名文件夹，于是我们便可以将文章中所引用的相关资源比如截图放到这个同名文件夹下，然后通过相对路径引用；不针对封面等与文章内容无关的资源；<ol>
 <li>强调一下hexo g时，只会将source目录下的img文件夹、_posts下的new出来的md文件以及资源引用开启后下的同名文件夹下的资源文件复制到public下，其他的文件不会复制到public下；因此直接复制图片粘贴到md中的资源图片，vscode会默认在当前目录下创建一个img&#x2F;{title}文件夹用以存放截图，但是此文件夹不会被hexo g复制到public下，因此需要手动将其复制粘贴一份到资源引用功能开启后的同名（title）文件夹下，然后hexo g -d即可；</li>
 </ol>
 </li>
 <li>分类与标签：<ol>
 <li>二者区别：分类具有顺序性和层次性而标签没有顺序和层次；可忽略不计</li>
-<li>在scaffolds&#x2F;post.md设置默认的文章模板如下，生成之后再加入分类&#x2F;标签即可，分类比较好用：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">- 标签</span><br><span class="line">categories:</span><br><span class="line">- 类别</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li>在scaffolds&#x2F;post.md设置默认的文章模板如下，生成之后再加入分类&#x2F;标签即可，分类比较好用：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">标签</span><br><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">类别</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li>自定制、美化博客<ol>
@@ -425,7 +425,7 @@
 <li><a target="_blank" rel="noopener" href="https://www.pexels.com/">https://www.pexels.com/</a></li>
 </ol>
 </li>
-<li>不知为何在配置中修改默认banner_img的属性不生效，但是可以分步设置各个分页的banner图，<a target="_blank" rel="noopener" href="https://s81679.github.io/2020/02/25/hexo-theme-fluid/#%E4%B8%BB%E9%A0%81-Banner-%E5%A4%A7%E5%9C%96">参考</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 首页</span><br><span class="line">index:</span><br><span class="line">    banner_img: /img/banner.jpg  # 首页 Banner 头图，以下相同</span><br><span class="line">    banner_img_height: 100  # 头图高度，屏幕百分比，available: 0 - 100</span><br><span class="line">#---------------------------</span><br><span class="line"># 文章頁</span><br><span class="line"># Archive Page</span><br><span class="line">#---------------------------</span><br><span class="line">archive:</span><br><span class="line">    banner_img: /img/articles.jpg</span><br><span class="line">    banner_img_height: 80  # available: 0 - 100</span><br><span class="line">#---------------------------</span><br><span class="line"># 分類頁</span><br><span class="line"># Categories Page</span><br><span class="line">#---------------------------</span><br><span class="line">category:</span><br><span class="line">    banner_img: /img/categories.jpg</span><br><span class="line">    banner_img_height: 80  # available: 0 - 100</span><br></pre></td></tr></table></figure></li>
+<li>不知为何在配置中修改默认banner_img的属性不生效，但是可以分步设置各个分页的banner图，<a target="_blank" rel="noopener" href="https://s81679.github.io/2020/02/25/hexo-theme-fluid/#%E4%B8%BB%E9%A0%81-Banner-%E5%A4%A7%E5%9C%96">参考</a><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-meta"># 首页</span><br><span class="hljs-symbol">index:</span><br><span class="hljs-symbol">    banner_img:</span> <span class="hljs-keyword">/img/</span>banner.jpg  <span class="hljs-meta"># 首页 Banner 头图，以下相同</span><br><span class="hljs-symbol">    banner_img_height:</span> <span class="hljs-number">100</span>  <span class="hljs-meta"># 头图高度，屏幕百分比，available: 0 - 100</span><br><span class="hljs-meta">#---------------------------</span><br><span class="hljs-meta"># 文章頁</span><br><span class="hljs-meta"># Archive Page</span><br><span class="hljs-meta">#---------------------------</span><br><span class="hljs-symbol">archive:</span><br><span class="hljs-symbol">    banner_img:</span> <span class="hljs-keyword">/img/</span>articles.jpg<br><span class="hljs-symbol">    banner_img_height:</span> <span class="hljs-number">80</span>  <span class="hljs-meta"># available: 0 - 100</span><br><span class="hljs-meta">#---------------------------</span><br><span class="hljs-meta"># 分類頁</span><br><span class="hljs-meta"># Categories Page</span><br><span class="hljs-meta">#---------------------------</span><br><span class="hljs-symbol">category:</span><br><span class="hljs-symbol">    banner_img:</span> <span class="hljs-keyword">/img/</span>categories.jpg<br><span class="hljs-symbol">    banner_img_height:</span> <span class="hljs-number">80</span>  <span class="hljs-meta"># available: 0 - 100</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li>设置文章在首页中的封面图：<ol>
@@ -477,7 +477,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>create my blog</div>
-      <div>https://tolsz.me/2024/09/23/创建博客/</div>
+      <div>https://tolsz.site/2024/09/23/创建博客/</div>
     </div>
     <div class="license-meta">
       
