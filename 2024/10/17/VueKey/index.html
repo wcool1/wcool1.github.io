@@ -208,11 +208,6 @@
           
   <div class="mt-3">
     
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-author" aria-hidden="true"></i>
-        wbj_Lsz
-      </span>
-    
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
@@ -240,13 +235,21 @@
         
         
         
-          <!-- compatible with older versions-->
           27 分钟
         
       </span>
     
 
     
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
     
   </div>
 
@@ -370,8 +373,10 @@
 </ul>
 </li>
 <li>在 Vue 2、3 中，<code>@</code> 是 <code>v-on</code> 指令的简写，用于监听 DOM 事件并执行相应的 JavaScript 代码。在 Vue 3 中，使用 <code>:</code> 符号来表示属性绑定是一个重要的语法特性。这种写法源于 Vue 的响应式特性，允许开发者将组件的属性（props）与数据模型进行绑定，从而实现动态更新。<ul>
-<li><p>注意绑定的值必须满足如下规则</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//可行的情况</span><br> 变量：:value=<span class="hljs-string">&quot;message&quot;</span><span class="hljs-comment">//message必须是被定义过的变量</span><br> 表达式：:value=<span class="hljs-string">&quot;count + 1&quot;</span><span class="hljs-comment">//count必须是被定义过的变量</span><br> 字符串字面量：:value=<span class="hljs-string">&quot;&#x27;hello&#x27;&quot;</span>（三个引号）<br> 对象：:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;&#123; active: isActive &#125;&quot;</span><br> 数组：:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;[activeClass, errorClass]&quot;</span><br> 布尔值：:disabled=<span class="hljs-string">&quot;false&quot;</span><br> <span class="hljs-comment">//不可行</span><br> :value=<span class="hljs-string">&#x27;hello&#x27;</span><br> :value=<span class="hljs-string">&quot;message&quot;</span><span class="hljs-comment">//但是message没有被定义</span><br> :value=<span class="hljs-string">&quot;count + 1&quot;</span><span class="hljs-comment">//但是count没有被定义</span><br> <span class="hljs-comment">//举例说明:当我插入ep input组件时</span><br> &lt;el-input v-model=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  placeholder=<span class="hljs-string">&quot;验证码&quot;</span>  :prefix-icon=<span class="hljs-string">&#x27;Search&#x27;</span> &gt;显示不了，因为v-bing绑定了<span class="hljs-title class_">Search</span>但它没有被定义<br> <span class="hljs-comment">//其实我想要的search就是一个常量字符串，正确写法如下：去掉:或者使用三引号表示字符串常量</span><br> &lt;el-input v-model=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  placeholder=<span class="hljs-string">&quot;验证码&quot;</span>  prefix-icon=<span class="hljs-string">&#x27;Search&#x27;</span> &gt;<br> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;验证码&quot;</span>  <span class="hljs-attr">:prefix-icon</span>=<span class="hljs-string">&quot;&#x27;Search&#x27;&quot;</span> &gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure></li>
+<li>注意绑定的值必须满足如下规则</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//可行的情况</span><br> 变量：:value=<span class="hljs-string">&quot;message&quot;</span><span class="hljs-comment">//message必须是被定义过的变量</span><br> 表达式：:value=<span class="hljs-string">&quot;count + 1&quot;</span><span class="hljs-comment">//count必须是被定义过的变量</span><br> 字符串字面量：:value=<span class="hljs-string">&quot;&#x27;hello&#x27;&quot;</span>（三个引号）<br> 对象：:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;&#123; active: isActive &#125;&quot;</span><br> 数组：:<span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;[activeClass, errorClass]&quot;</span><br> 布尔值：:disabled=<span class="hljs-string">&quot;false&quot;</span><br> <span class="hljs-comment">//不可行</span><br> :value=<span class="hljs-string">&#x27;hello&#x27;</span><br> :value=<span class="hljs-string">&quot;message&quot;</span><span class="hljs-comment">//但是message没有被定义</span><br> :value=<span class="hljs-string">&quot;count + 1&quot;</span><span class="hljs-comment">//但是count没有被定义</span><br> <span class="hljs-comment">//举例说明:当我插入ep input组件时</span><br> &lt;el-input v-model=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  placeholder=<span class="hljs-string">&quot;验证码&quot;</span>  :prefix-icon=<span class="hljs-string">&#x27;Search&#x27;</span> &gt;显示不了，因为v-bing绑定了<span class="hljs-title class_">Search</span>但它没有被定义<br> <span class="hljs-comment">//其实我想要的search就是一个常量字符串，正确写法如下：去掉:或者使用三引号表示字符串常量</span><br> &lt;el-input v-model=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  placeholder=<span class="hljs-string">&quot;验证码&quot;</span>  prefix-icon=<span class="hljs-string">&#x27;Search&#x27;</span> &gt;<br> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;loginForm.vaildCode&quot;</span>  <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;验证码&quot;</span>  <span class="hljs-attr">:prefix-icon</span>=<span class="hljs-string">&quot;&#x27;Search&#x27;&quot;</span> &gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br><span class="language-xml"></span><br></code></pre></td></tr></table></figure>
+<ul>
 <li><p>属性绑定语法</p>
 <ul>
 <li><p>基本用法</p>
@@ -421,19 +426,19 @@
 <li><p><strong>访问原生事件</strong>：在事件处理方法中，可以访问原生 DOM 事件对象。该对象会自动作为参数传递给方法。例如：</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">methods</span>: &#123;<br><span class="hljs-title function_">handleClick</span>(<span class="hljs-params">event</span>) &#123;<br>   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">target</span>); <span class="hljs-comment">// 输出触发事件的元素</span><br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>**使用 <code>$event</code>**：在内联处理器中，可以通过特殊变量 <code>$event</code> 来访问原生事件。例如：</p>
+<li><p><strong>使用 <code>$event</code></strong>：在内联处理器中，可以通过特殊变量 <code>$event</code> 来访问原生事件。例如：</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick($event)&quot;</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>  <strong><strong>修饰符</strong></strong></p>
 <p>  Vue 提供了一些修饰符来控制事件的行为，例如：</p>
 <ul>
-<li><p>**<code>.stop</code>**：阻止事件冒泡。</p>
+<li><p><strong><code>.stop</code></strong>：阻止事件冒泡。</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click.stop</span>=<span class="hljs-string">&quot;doSomething&quot;</span>&gt;</span>Click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p>**<code>.prevent</code>**：阻止默认行为。</p>
+<li><p><strong><code>.prevent</code></strong>：阻止默认行为。</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">&quot;submitForm&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
-<li><p>**<code>.self</code>**：仅当事件目标是元素本身时才触发处理器。</p>
+<li><p><strong><code>.self</code></strong>：仅当事件目标是元素本身时才触发处理器。</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click.self</span>=<span class="hljs-string">&quot;doThat&quot;</span>&gt;</span>Click me only if clicked on this div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>自定义事件</p>
@@ -449,43 +454,54 @@
 <li>使用 <code>&#123;&#123; &#125;&#125;</code> 插值语法</li>
 </ol>
 <ul>
-<li>在模板中显示变量值 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 显示数据 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;&#123; username &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; count + 1 &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; isActive ? &#x27;激活&#x27; : &#x27;未激活&#x27; &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure></li>
+<li>在模板中显示变量值</li>
 </ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 显示数据 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;&#123; username &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#123;&#123; count + 1 &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; isActive ? &#x27;激活&#x27; : &#x27;未激活&#x27; &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>使用单引号 <code>&#39;&#39;</code></li>
 </ol>
 <ul>
 <li>字符串字面量</li>
 <li>静态值</li>
-<li>变量作各种参数，比如store.commit&#x2F;dispatch等等 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">increment</span>: <span class="hljs-function">() =&gt;</span> store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;increment&#x27;</span>),<span class="hljs-comment">//提交一个名为increment的变化</span><br><br></code></pre></td></tr></table></figure></li>
+<li>变量作各种参数，比如store.commit&#x2F;dispatch等等</li>
 </ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">increment</span>: <span class="hljs-function">() =&gt;</span> store.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;increment&#x27;</span>),<span class="hljs-comment">//提交一个名为increment的变化</span><br><br></code></pre></td></tr></table></figure>
+
 <ol start="3">
 <li>使用 <code>:</code> 或 <code>v-bind</code></li>
 </ol>
 <ul>
-<li>动态绑定属性 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 动态绑定 --&gt;<br>&lt;div :class=&quot;&#123;&#x27;click-enabled&#x27;: !flag&#125;&quot;&gt;//代表flag为false时，class为click-enabled，否则没有class<br>&lt;img :src=&quot;imgUrl&quot;&gt;<br>&lt;el-button :type=&quot;buttonType&quot;&gt;<br>&lt;div :style=&quot;&#123; width: width + &#x27;px&#x27; &#125;&quot;&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure></li>
+<li>动态绑定属性</li>
 </ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 动态绑定 --&gt;<br>&lt;div :class=&quot;&#123;&#x27;click-enabled&#x27;: !flag&#125;&quot;&gt;//代表flag为false时，class为click-enabled，否则没有class<br>&lt;img :src=&quot;imgUrl&quot;&gt;<br>&lt;el-button :type=&quot;buttonType&quot;&gt;<br>&lt;div :style=&quot;&#123; width: width + &#x27;px&#x27; &#125;&quot;&gt;<br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
+
 <ol start="4">
 <li>使用 <code>@</code> 或 <code>v-on</code></li>
 </ol>
 <ul>
-<li>事件绑定 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 事件绑定 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> @<span class="hljs-attr">input</span>=<span class="hljs-string">&quot;handleInput&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li>
+<li>事件绑定</li>
 </ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 事件绑定 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;handleClick&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> @<span class="hljs-attr">input</span>=<span class="hljs-string">&quot;handleInput&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
 <ol start="5">
 <li>使用 <code>v-model</code></li>
 </ol>
 <ul>
-<li>双向数据绑定 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 双向绑定 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li>
+<li>双向数据绑定</li>
 </ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 双向绑定 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;message&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">el-input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
 <ol start="6">
 <li>使用 <code>v-if/v-show</code></li>
 </ol>
 <ul>
-<li><p>条件渲染</p>
+<li>条件渲染</li>
+</ul>
  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>&lt;!-- 条件渲染 --&gt;<br>   <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isShow&quot;</span>&gt;</span></span><br><span class="language-xml">      这个元素会根据 isShow 的值来添加或删除</span><br><span class="language-xml">   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><br>   <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;isVisible&quot;</span>&gt;</span></span><br><span class="language-xml">      这个元素会根据 isVisible 的值来显示或隐藏</span><br><span class="language-xml">   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>&lt;/template&gt;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>总结：</p>
+
 <ul>
+<li>总结：<ul>
 <li><code>&#123;&#123; &#125;&#125;</code>: 显示变量值</li>
 <li><code>&#39;&#39;</code>: 静态值</li>
 <li><code>:</code>: 动态属性绑定</li>
@@ -869,6 +885,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
 
 
 
