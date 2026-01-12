@@ -1,0 +1,1004 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/person.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="wbj_Lsz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="探究阅读速度与注意力机制的相爱相杀">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阅读速度与注意力机制的关系">
+<meta property="og:url" content="https://tolsz.site/2025/11/12/%E9%98%85%E8%AF%BB%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%85%B3%E7%B3%BB/index.html">
+<meta property="og:site_name" content="toLsz">
+<meta property="og:description" content="探究阅读速度与注意力机制的相爱相杀">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-12T14:22:03.000Z">
+<meta property="article:modified_time" content="2026-01-12T14:34:54.324Z">
+<meta property="article:author" content="wbj_Lsz">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>阅读速度与注意力机制的关系 - toLsz</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"tolsz.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>toLsz&#39;blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/blog_banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="阅读速度与注意力机制的关系"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-11-12 22:22" pubdate>
+           2025 年 11 月 12 日 , 晚上 10:22 , 星期三
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          5.9k 字
+        
+      </span>
+    
+
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">阅读速度与注意力机制的关系</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>探究阅读速度与注意力机制的相爱相杀</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="中文阅读效能、专注力机制与神经语言学干预策略深度研究报告：基于220-CPM阅读速率的案例分析"><a href="#中文阅读效能、专注力机制与神经语言学干预策略深度研究报告：基于220-CPM阅读速率的案例分析" class="headerlink" title="中文阅读效能、专注力机制与神经语言学干预策略深度研究报告：基于220 CPM阅读速率的案例分析"></a>中文阅读效能、专注力机制与神经语言学干预策略深度研究报告：基于220 CPM阅读速率的案例分析</h1><h2 id="1-绪论：阅读实验的现象学解构与研究背景"><a href="#1-绪论：阅读实验的现象学解构与研究背景" class="headerlink" title="1. 绪论：阅读实验的现象学解构与研究背景"></a>1. 绪论：阅读实验的现象学解构与研究背景</h2><h3 id="1-1-研究缘起与案例背景"><a href="#1-1-研究缘起与案例背景" class="headerlink" title="1.1 研究缘起与案例背景"></a>1.1 研究缘起与案例背景</h3><p>本研究报告基于用户进行的一项自我量化实验：在10分钟的时间窗口内，受试者完成了2200字的中文阅读任务，计算得出其阅读速率为 <strong>220字&#x2F;分钟（CPM, Characters Per Minute）</strong>。在实验过程中，受试者报告了显著的“思维游荡”（Mind Wandering）现象，即俗称的“分神”或“走神”。受试者提出的核心假设是：这种缓慢的阅读速度是由低下的专注力导致的。</p>
+<p>这一案例并非孤立现象，而是现代知识工作者和学生群体中普遍存在的认知困境的典型代表。在信息过载的时代，高效的信息摄取能力已成为核心竞争力之一。然而，关于“慢速阅读”与“注意力分散”之间的因果关系，公众常识往往存在误区。传统的直觉认为，注意力不集中导致了阅读效率低下，因此解决方案往往指向“训练专注力”。然而，当代认知心理学、神经语言学及眼动研究的证据表明，这种因果关系可能恰恰相反：<strong>阅读速度过慢导致的认知负荷不足（Cognitive Underload），可能是诱发注意力分散的根本原因。</strong></p>
+<h3 id="1-2-报告目的与范围"><a href="#1-2-报告目的与范围" class="headerlink" title="1.2 报告目的与范围"></a>1.2 报告目的与范围</h3><p>本报告旨在对上述案例进行详尽的病理学分析与干预方案设计。我们将超越表层的行为观察，深入大脑的认知控制系统、视觉处理通路及语言解码机制，以回答以下核心问题：</p>
+<ol>
+<li><p><strong>基准诊断</strong>：220 CPM的阅读速度在中文母语者群体中处于何种水平？它揭示了受试者采用了何种底层的阅读策略？</p>
+</li>
+<li><p><strong>机制解析</strong>：专注力低下是阅读慢的原因，还是结果？大脑的默认模式网络（DMN）与任务正激活网络（TPN）在阅读过程中如何相互拮抗？</p>
+</li>
+<li><p><strong>病理探究</strong>：除了专注力，还有哪些隐形的生理或语言学障碍（如全音默读、眼动控制低效、视知觉广度狭窄）限制了阅读速度？</p>
+</li>
+<li><p><strong>干预策略</strong>：基于神经可塑性原理，如何设计科学的训练方案（如视觉引导、舒尔特方格、组块化训练等）来系统性地提升阅读速度并改善专注力？</p>
+</li>
+</ol>
+<p>本报告将整合来自认知心理学、教育心理学、神经科学及阅读科学的最新实证研究数据，为受试者提供一份详实、严谨且具有高度可操作性的深度分析报告。</p>
+<hr>
+<h2 id="2-阅读效能的基准评估与诊断分析"><a href="#2-阅读效能的基准评估与诊断分析" class="headerlink" title="2. 阅读效能的基准评估与诊断分析"></a>2. 阅读效能的基准评估与诊断分析</h2><p>为了准确评估受试者的阅读表现，我们首先必须建立一个基于大样本数据的参照系。中文作为一种表意文字（Logographic system），其阅读机制与拼音文字（如英文）存在显著差异，因此必须依据针对中文母语者的学术研究数据进行对标分析。</p>
+<h3 id="2-1-阅读速率的量化诊断"><a href="#2-1-阅读速率的量化诊断" class="headerlink" title="2.1 阅读速率的量化诊断"></a>2.1 阅读速率的量化诊断</h3><p>受试者的实验数据明确显示其阅读速率为 <strong>220 CPM</strong>。这一数值本身并不具有独立的意义，只有置于不同的阅读模式常模中进行对比，才能揭示其背后的认知机制。</p>
+<h4 id="2-1-1-中文阅读速度常模体系"><a href="#2-1-1-中文阅读速度常模体系" class="headerlink" title="2.1.1 中文阅读速度常模体系"></a>2.1.1 中文阅读速度常模体系</h4><p>根据多项针对中文阅读速度的实证研究 ，我们可以构建如下的分层速度模型：  </p>
+<p><strong>表 1：中文母语者阅读速度分层常模对照表</strong></p>
+<table>
+<thead>
+<tr>
+<th>阅读模式 (Reading Mode)</th>
+<th>速度范围 (CPM)</th>
+<th>典型场景与认知特征</th>
+<th>神经机制描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>朗读 (Oral Reading &#x2F; Reading Aloud)</strong></td>
+<td><strong>180 - 260</strong></td>
+<td>公众演讲、播音、儿童识字</td>
+<td>受限于发音器官（舌、唇、喉）的肌肉运动极限；必须经过语音编码回路。</td>
+</tr>
+<tr>
+<td><strong>默读 - 学习型 (Study Reading)</strong></td>
+<td><strong>200 - 350</strong></td>
+<td>阅读教科书、复杂技术文档、需记忆材料</td>
+<td>高认知负荷，伴随频繁的眼动回视（Regression）和深度语义加工。</td>
+</tr>
+<tr>
+<td><strong>默读 - 休闲型 (Casual &#x2F; Rauding)</strong></td>
+<td><strong>400 - 700</strong></td>
+<td>阅读小说、新闻、非虚构类通俗读物</td>
+<td>视觉-语义直达通路（Orthography-to-Semantics）主导；语音中介减弱。</td>
+</tr>
+<tr>
+<td><strong>快速阅读 (Speed Reading &#x2F; Skimming)</strong></td>
+<td><strong>800 - 1500+</strong></td>
+<td>信息检索、略读、概览</td>
+<td>牺牲部分细节理解（如虚词、修饰语），主要抓取核心名词和动词；利用周边视觉。</td>
+</tr>
+<tr>
+<td><strong>受试者当前状态</strong></td>
+<td><strong>220</strong></td>
+<td><strong>典型朗读速度区间</strong></td>
+<td><strong>高度疑似“全音默读”策略；听觉通道主导。</strong></td>
+</tr>
+</tbody></table>
+<p>Export to Sheets</p>
+<h4 id="2-1-2-数据解读：听觉通道的锁定效应"><a href="#2-1-2-数据解读：听觉通道的锁定效应" class="headerlink" title="2.1.2 数据解读：听觉通道的锁定效应"></a>2.1.2 数据解读：听觉通道的锁定效应</h4><p>对比表1数据，我们发现一个惊人的吻合：受试者的 <strong>220 CPM</strong> 几乎完美落在中文母语者的 <strong>平均朗读速度（约 255 ± 29 CPM）</strong> 区间内 。  </p>
+<p>这一数据重合绝非巧合。它强有力地暗示了受试者在进行所谓的“默读”时，其大脑内部的运作模式实际上是“无声的朗读”。在神经语言学中，这被称为 <strong>默读（Subvocalization）</strong> 或 <strong>潜在发音</strong>。</p>
+<ul>
+<li><p><strong>物理瓶颈</strong>：人类的视觉处理速度（眼睛识别图像并传输至大脑）理论上可以非常快（毫秒级），但人类的说话速度受限于口腔肌肉的物理惯性。如果读者习惯于将每一个看到的字都转化为内心的声音，那么阅读速度就会被强制锁定在说话速度的上限上。</p>
+</li>
+<li><p><strong>诊断结论</strong>：受试者的慢速阅读并非因为理解能力差，而是因为<strong>错误地使用了听觉回路来处理视觉信息</strong>。这就像是用步行的速度在高速公路上驾驶跑车，无论引擎（大脑处理能力）多么强大，速度都被限制在了第一档。</p>
+</li>
+</ul>
+<h3 id="2-2-阅读理解与速度的辩证关系"><a href="#2-2-阅读理解与速度的辩证关系" class="headerlink" title="2.2 阅读理解与速度的辩证关系"></a>2.2 阅读理解与速度的辩证关系</h3><p>受试者提到“时间到没读完”。在阅读测试中，速度与理解率（Comprehension Rate）通常呈现倒U型关系。</p>
+<ul>
+<li><p><strong>过快</strong>（&gt;1000 CPM）：对于未受训练者，理解率会急剧下降，出现“眼过脑不过”的现象。</p>
+</li>
+<li><p><strong>过慢</strong>（&lt;300 CPM）：这正是受试者所处的区间。研究表明，过慢的阅读速度不仅不会提高理解率，反而可能<strong>降低</strong>理解率 。这是因为语言是基于短时记忆（Short-term Memory）和工作记忆（Working Memory）的流式处理。如果读取一个句子的前半部分和后半部分的时间间隔过长，工作记忆中的信息会发生衰退（Decay），导致读者读到句末时已经忘记了句首的主语，从而不得不回视重读。这种破碎的阅读体验直接导致了受试者所描述的“没读完”和挫败感。</p>
+</li>
+</ul>
+<p>  </p>
+<hr>
+<h2 id="3-专注力低下的认知心理学机制：归因分析"><a href="#3-专注力低下的认知心理学机制：归因分析" class="headerlink" title="3. 专注力低下的认知心理学机制：归因分析"></a>3. 专注力低下的认知心理学机制：归因分析</h2><p>受试者疑问：“这是不是专注力低下导致？主要原因是什么？”。 基于现代认知心理学模型，我们必须修正这一因果判断。证据显示，<strong>阅读速度慢往往是导致分神的原因（始作俑者），而非仅仅是分神的结果。</strong></p>
+<h3 id="3-1-认知负荷理论（Cognitive-Load-Theory）与“认知欠载”"><a href="#3-1-认知负荷理论（Cognitive-Load-Theory）与“认知欠载”" class="headerlink" title="3.1 认知负荷理论（Cognitive Load Theory）与“认知欠载”"></a>3.1 认知负荷理论（Cognitive Load Theory）与“认知欠载”</h3><p>专注力的维持依赖于适度的认知唤醒水平。这里存在一个类似于经济学中的“供需关系”：</p>
+<ul>
+<li><p><strong>供给端</strong>：大脑的认知处理带宽（Bandwidth）。一个受过教育的成年大脑，在处理母语信息时，具备极高的处理速率（通常远高于说话速度）。</p>
+</li>
+<li><p><strong>需求端</strong>：眼睛输入的文本流速。</p>
+</li>
+</ul>
+<p>当受试者以 220 CPM 的速度阅读时，出现了一种被称为 <strong>认知欠载（Cognitive Underload）</strong> 的状态 。  </p>
+<ul>
+<li><p><strong>机制详解</strong>：假设受试者的大脑每分钟能轻松处理 800 个字的信息量，但眼睛每分钟只提供了 220 个字。这意味着有约 <strong>72.5%</strong> 的认知资源处于“闲置”状态。</p>
+</li>
+<li><p><strong>资源溢出效应</strong>：大脑是一个不允许真空的器官。闲置的认知资源不会自动进入休眠模式，而是会本能地寻找其他刺激来填补空白。这种“溢出”的注意力资源会自动扫描内部环境（如当下的情绪、未完成的任务、身体的感觉）或外部环境（如噪音）。</p>
+</li>
+<li><p><strong>结论</strong>：受试者之所以“经常分神想别的事情”，正是因为<strong>读得太慢，脑子“吃不饱”</strong>。慢速阅读为杂念的入侵提供了充足的认知空间。</p>
+</li>
+</ul>
+<h3 id="3-2-默认模式网络（DMN）与任务正激活网络（TPN）的拮抗"><a href="#3-2-默认模式网络（DMN）与任务正激活网络（TPN）的拮抗" class="headerlink" title="3.2 默认模式网络（DMN）与任务正激活网络（TPN）的拮抗"></a>3.2 默认模式网络（DMN）与任务正激活网络（TPN）的拮抗</h3><p>神经科学研究发现，大脑中存在两个反向相关的神经网络系统：</p>
+<ol>
+<li><p><strong>任务正激活网络（Task Positive Network, TPN）</strong>：当我们专注于执行具体的外部任务（如高强度阅读、解题）时被激活。</p>
+</li>
+<li><p><strong>默认模式网络（Default Mode Network, DMN）</strong>：当我们处于休息、发呆或任务刺激不足时被激活。DMN 负责自我参照思维、回忆过去、规划未来以及社会认知——这正是受试者体验到的“想别的事情” 。</p>
+</li>
+</ol>
+<p>  </p>
+<p><strong>拮抗原理</strong>：TPN 和 DMN 通常是相互抑制的。当任务难度适中且速度够快时，TPN 强力激活，DMN 被深度抑制，人进入“心流”（Flow）状态。然而，当阅读速度过慢（如 220 CPM），任务对大脑的刺激强度不足以维持 TPN 的主导地位，抑制作用减弱，DMN 趁虚而入，导致思维游荡（Mind Wandering） 。  </p>
+<p><strong>从这个角度看，受试者的分神其实是大脑在“无聊”状态下的自我保护机制，试图通过激活 DMN 来维持一定的神经唤醒度。</strong></p>
+<h3 id="3-3-任务价值评估与执行控制衰竭"><a href="#3-3-任务价值评估与执行控制衰竭" class="headerlink" title="3.3 任务价值评估与执行控制衰竭"></a>3.3 任务价值评估与执行控制衰竭</h3><p>根据控制价值理论（Control-Value Theory），执行功能（Executive Function）会持续评估当前任务的“期望价值” 。  </p>
+<ul>
+<li><p><strong>低效的反馈循环</strong>：慢速阅读导致信息获取效率低下，读者长时间得不到新的知识刺激（Reward）。</p>
+</li>
+<li><p><strong>价值阈值</strong>：当大脑判定“继续阅读这句话”的奖励（获得的信息量）低于“思考中午吃什么”的奖励时，执行控制系统会自动切换目标。</p>
+</li>
+<li><p><strong>焦虑的干扰</strong>：受试者提到“时间到没读完”。这种时间压力会诱发焦虑。焦虑本身会占用工作记忆资源（尤其是语音回路），导致处理当前文本的资源更少，理解力下降，进而导致更多的回视和更慢的速度，形成恶性循环 。</p>
+</li>
+</ul>
+<p>  </p>
+<hr>
+<h2 id="4-阅读速度慢的多元病理分析：除此之外的原因"><a href="#4-阅读速度慢的多元病理分析：除此之外的原因" class="headerlink" title="4. 阅读速度慢的多元病理分析：除此之外的原因"></a>4. 阅读速度慢的多元病理分析：除此之外的原因</h2><p>除了“认知欠载”导致的注意力分散外，还有一系列具体的生理和语言学机制共同作用，将受试者的阅读速度限制在 220 CPM。以下分析将回答“阅读速度慢还有别的可能原因吗？”。</p>
+<h3 id="4-1-核心障碍：全音默读（Subvocalization）的生理机制"><a href="#4-1-核心障碍：全音默读（Subvocalization）的生理机制" class="headerlink" title="4.1 核心障碍：全音默读（Subvocalization）的生理机制"></a>4.1 核心障碍：全音默读（Subvocalization）的生理机制</h3><p>这是最主要的技术性障碍。如前文诊断，220 CPM 是典型的声读速度。</p>
+<h4 id="4-1-1-默读的层次"><a href="#4-1-1-默读的层次" class="headerlink" title="4.1.1 默读的层次"></a>4.1.1 默读的层次</h4><p>默读并非全有或全无，而是存在不同的层次 ：  </p>
+<ol>
+<li><p><strong>显性唇读</strong>：嘴唇微动，这是最初级的阅读形式。</p>
+</li>
+<li><p><strong>喉部默读</strong>：嘴唇不动，但声带和喉部肌肉有微弱的肌电活动（EMG）。</p>
+</li>
+<li><p><strong>听觉默读</strong>：肌肉无活动，但在大脑的布罗卡区（Broca’s Area）和韦尼克区（Wernicke’s Area）产生完整的“内心听觉形象”。受试者很可能处于这一层。</p>
+</li>
+<li><p><strong>语义直映</strong>：仅有极其微弱的语音激活，主要依赖视觉皮层与语义网络的直接连接。</p>
+</li>
+</ol>
+<h4 id="4-1-2-中文阅读中的“声调警察”"><a href="#4-1-2-中文阅读中的“声调警察”" class="headerlink" title="4.1.2 中文阅读中的“声调警察”"></a>4.1.2 中文阅读中的“声调警察”</h4><p>对于中文学习者或过于严谨的读者，还存在一种特殊的默读障碍——“声调警察”（Tone Police）现象 。部分读者在内心阅读时，不仅要读出音，还潜意识地强迫自己确认每一个字的声调是否准确。这种对语音精确性的过度强迫（Hyper-correction）会消耗大量的认知资源，使得阅读速度甚至低于正常的说话速度。受试者的 220 CPM 略低于平均语速 255 CPM，这暗示了可能存在这种微观层面的迟疑和确认过程。  </p>
+<h3 id="4-2-眼动控制低效（Oculomotor-Inefficiency）"><a href="#4-2-眼动控制低效（Oculomotor-Inefficiency）" class="headerlink" title="4.2 眼动控制低效（Oculomotor Inefficiency）"></a>4.2 眼动控制低效（Oculomotor Inefficiency）</h3><p>阅读过程在微观上是由一系列**注视（Fixations）<strong>和</strong>眼跳（Saccades）**组成的。低效的眼动模式是慢速阅读的直接物理原因。</p>
+<h4 id="4-2-1-逐字注视（Word-by-Word-Fixation）"><a href="#4-2-1-逐字注视（Word-by-Word-Fixation）" class="headerlink" title="4.2.1 逐字注视（Word-by-Word Fixation）"></a>4.2.1 逐字注视（Word-by-Word Fixation）</h4><p>高效阅读者通常进行“跳读”，即眼跳跨度大，一次注视涵盖多个字。而慢速读者往往表现为<strong>逐字注视</strong>。</p>
+<ul>
+<li><p><strong>数据对比</strong>：</p>
+<ul>
+<li><p><strong>中文平均眼跳幅度</strong>：约 2-3 个汉字 。  </p>
+</li>
+<li><p><strong>受试者推测</strong>：可能接近 1 个汉字&#x2F;次注视。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>后果</strong>：每一次眼跳都需要大脑重新定位，并伴随短暂的视觉阻断（Saccadic Suppression）。如果每读一个字都要停顿一次，大脑在眼动规划上消耗的时间将远超信息处理的时间，极易导致视觉疲劳。</p>
+</li>
+</ul>
+<h4 id="4-2-2-高频回视（Regression）"><a href="#4-2-2-高频回视（Regression）" class="headerlink" title="4.2.2 高频回视（Regression）"></a>4.2.2 高频回视（Regression）</h4><p>回视是指眼球向阅读方向的反方向移动，以重新读取之前的文本。</p>
+<ul>
+<li><p><strong>常模</strong>：熟练读者的回视率约为 10-15%。</p>
+</li>
+<li><p><strong>慢速读者</strong>：回视率可高达 30-40% 。  </p>
+</li>
+<li><p><strong>原因</strong>：除了理解失败外，<strong>强迫性回视</strong>也是常见原因——即读者缺乏自信，总觉得“没看清”，下意识地回去确认。受试者提到的“分神”往往伴随着大量的无意识回视：分神-&gt;漏读-&gt;回视-&gt;焦虑-&gt;更慢。</p>
+</li>
+</ul>
+<h3 id="4-3-视知觉广度（Perceptual-Span）与组块化（Chunking）能力缺失"><a href="#4-3-视知觉广度（Perceptual-Span）与组块化（Chunking）能力缺失" class="headerlink" title="4.3 视知觉广度（Perceptual Span）与组块化（Chunking）能力缺失"></a>4.3 视知觉广度（Perceptual Span）与组块化（Chunking）能力缺失</h3><ul>
+<li><p><strong>视幅狭窄</strong>：未经训练的读者通常过度依赖中央凹（Fovea）视觉（最清晰的中心视野，仅覆盖约2度视角），而忽略了副中央凹（Parafovea）和周边视觉（Peripheral Vision）的信息获取能力 。高效读者利用周边视觉预处理下一个词的字形，从而引导眼跳更准确地落在下一个意群的中心（Optimal Viewing Position）。  </p>
+</li>
+<li><p><strong>组块化失败</strong>：中文阅读高度依赖语境和词组。例如“注意力”这三个字，在高效读者眼中是一个单一的意义单元（Chunk），只需一次注视。而在低效读者眼中，可能是“注-意-力”三个独立的符号。受试者可能缺乏快速识别高频词组和成语的能力，导致大脑必须进行低级的字形解码，无法进行高级的语义合成 。</p>
+</li>
+</ul>
+<p>  </p>
+<h3 id="4-4-文本适应性与外部因素"><a href="#4-4-文本适应性与外部因素" class="headerlink" title="4.4 文本适应性与外部因素"></a>4.4 文本适应性与外部因素</h3><ul>
+<li><p><strong>文本难度</strong>：如果受试者阅读的文章充斥生僻字或专业术语，大脑必须从“自动化加工”切换到“控制性加工”，速度必然下降 。  </p>
+</li>
+<li><p><strong>排版因素</strong>：字体过小、行间距过密或过宽，都会影响眼跳的准确性。</p>
+</li>
+<li><p><strong>生理状态</strong>：疲劳、缺觉会显著延长注视时间（Fixation Duration），降低眼跳速度。</p>
+</li>
+</ul>
+<hr>
+<h2 id="5-综合解决方案与系统训练策略"><a href="#5-综合解决方案与系统训练策略" class="headerlink" title="5. 综合解决方案与系统训练策略"></a>5. 综合解决方案与系统训练策略</h2><p>基于上述深入分析，我们提出一套系统性的改善方案。核心逻辑是：<strong>逆转因果——通过技术手段强制提高阅读速度，从而倒逼专注力的提升，打破“慢-分神-更慢”的恶性循环。</strong></p>
+<h3 id="5-1-第一阶段：物理机制干预——打破默读与优化眼动"><a href="#5-1-第一阶段：物理机制干预——打破默读与优化眼动" class="headerlink" title="5.1 第一阶段：物理机制干预——打破默读与优化眼动"></a>5.1 第一阶段：物理机制干预——打破默读与优化眼动</h3><p>本阶段目标：消除生理限速因素，将速度提升至 400 CPM 以上。</p>
+<h4 id="5-1-1-视觉引导法（Meta-Guiding-The-Pointer-Method）"><a href="#5-1-1-视觉引导法（Meta-Guiding-The-Pointer-Method）" class="headerlink" title="5.1.1 视觉引导法（Meta-Guiding &#x2F; The Pointer Method）"></a>5.1.1 视觉引导法（Meta-Guiding &#x2F; The Pointer Method）</h4><p>这是最立竿见影的物理干预手段。</p>
+<ul>
+<li><p><strong>原理</strong>：利用人眼的“视动反射”（Optokinetic reflex），眼球天然倾向于跟随移动的物体。手指的平滑移动可以消除不必要的微眼跳和回视 。  </p>
+</li>
+<li><p><strong>操作步骤</strong>：</p>
+<ol>
+<li><p><strong>工具</strong>：使用手指、笔尖或鼠标指针。</p>
+</li>
+<li><p><strong>动作</strong>：将引导物放在正在阅读的文字下方。</p>
+</li>
+<li><p><strong>规则</strong>：引导物以<strong>匀速、连续</strong>的方式在行间移动。<strong>引导物绝不停止，绝不回头。</strong></p>
+</li>
+<li><p><strong>速度</strong>：起步阶段，让手指移动的速度略快于你感到舒适的理解速度。迫使眼睛必须加速追赶手指。</p>
+</li>
+<li><p><strong>心态</strong>：接受“理解率暂时下降”的现实。初期只需看清字形，不必强求100%理解。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="5-1-2-听觉干扰法（Auditory-Distraction-Anti-Subvocalization）"><a href="#5-1-2-听觉干扰法（Auditory-Distraction-Anti-Subvocalization）" class="headerlink" title="5.1.2 听觉干扰法（Auditory Distraction &#x2F; Anti-Subvocalization）"></a>5.1.2 听觉干扰法（Auditory Distraction &#x2F; Anti-Subvocalization）</h4><p>旨在切断视觉与听觉中枢的强耦合 。  </p>
+<ul>
+<li><p><strong>原理</strong>：工作记忆中的语音回路容量有限。如果我们在阅读时主动占用语音回路，大脑就无法同时进行“默读”，从而被迫开辟纯视觉通路。</p>
+</li>
+<li><p><strong>训练方法</strong>：</p>
+<ol>
+<li><p><strong>节奏干扰</strong>：阅读时手指在桌面上轻轻打拍子（如每秒两下，哒-哒-哒）。</p>
+</li>
+<li><p><strong>白噪音&#x2F;音乐</strong>：播放无歌词的器乐（如古典音乐、电子乐）或白噪音。</p>
+</li>
+<li><p><strong>咀嚼法</strong>：阅读时嚼口香糖。这会占用口腔运动皮层，抑制喉部微动作。</p>
+</li>
+<li><p><strong>数数法（高阶）</strong>：阅读时在心里默念“1, 2, 3, 4”或唱一首简单的儿歌。这极其困难，但能彻底阻断对文本的默读。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="5-2-第二阶段：视知觉能力训练——拓展视幅"><a href="#5-2-第二阶段：视知觉能力训练——拓展视幅" class="headerlink" title="5.2 第二阶段：视知觉能力训练——拓展视幅"></a>5.2 第二阶段：视知觉能力训练——拓展视幅</h3><p>本阶段目标：从“逐字阅读”进化为“组块阅读”，激活周边视觉。</p>
+<h4 id="5-2-1-舒尔特方格（Schulte-Grid）专项训练"><a href="#5-2-1-舒尔特方格（Schulte-Grid）专项训练" class="headerlink" title="5.2.1 舒尔特方格（Schulte Grid）专项训练"></a>5.2.1 舒尔特方格（Schulte Grid）专项训练</h4><p>舒尔特方格是公认的最有效的注意力与视幅训练工具 。  </p>
+<ul>
+<li><p><strong>工具</strong>：一张 5x5 的方格纸，内含 1-25 的乱序数字。</p>
+</li>
+<li><p><strong>标准操作</strong>：</p>
+<ol>
+<li><p>眼睛注视表格<strong>正中心</strong>的方格，保持视线不移动。</p>
+</li>
+<li><p>利用**余光（周边视觉）**按顺序寻找 1, 2, 3… 直到 25。</p>
+</li>
+<li><p>手指指出数字位置，同时大声读出（或默念）。</p>
+</li>
+</ol>
+</li>
+<li><p><strong>进阶要求</strong>：眼睛始终锁定中心，不可随数字移动。这强迫大脑扩大有效视野范围。</p>
+</li>
+<li><p><strong>量化目标</strong>：成年人的及格线约为 25-30 秒。若能训练至 <strong>15秒以内</strong>，其阅读视幅将显著改善，能够轻松实现“一目半行”甚至“一目一行”。</p>
+</li>
+<li><p><strong>训练量</strong>：每天练习 5-10 组，连续 2 周可见显著效果。</p>
+</li>
+</ul>
+<h4 id="5-2-2-意群阅读（Chunking）练习"><a href="#5-2-2-意群阅读（Chunking）练习" class="headerlink" title="5.2.2 意群阅读（Chunking）练习"></a>5.2.2 意群阅读（Chunking）练习</h4><ul>
+<li><p><strong>原理</strong>：训练大脑将多个字识别为一个整体 。  </p>
+</li>
+<li><p><strong>操作</strong>：</p>
+<ul>
+<li><p>在文本上人为画竖线，将每行字切分为 2-3 个组块。例如：“专注力低下的 | 主要原因 | 是什么”。</p>
+</li>
+<li><p>练习时，视线只落在每个组块的<strong>中心点</strong>，利用余光看清两边的字。</p>
+</li>
+<li><p>逐渐增加每个组块的字数（从 3 个字增加到 5-7 个字）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-3-第三阶段：认知策略干预——重塑专注力"><a href="#5-3-第三阶段：认知策略干预——重塑专注力" class="headerlink" title="5.3 第三阶段：认知策略干预——重塑专注力"></a>5.3 第三阶段：认知策略干预——重塑专注力</h3><p>本阶段目标：解决“分神”的心理诱因，提高任务价值感。</p>
+<h4 id="5-3-1-番茄工作法（Pomodoro-Technique）的改良应用"><a href="#5-3-1-番茄工作法（Pomodoro-Technique）的改良应用" class="headerlink" title="5.3.1 番茄工作法（Pomodoro Technique）的改良应用"></a>5.3.1 番茄工作法（Pomodoro Technique）的改良应用</h4><ul>
+<li><p><strong>原理</strong>：利用时间切片（Timeboxing）来匹配注意力的生理节律，通过设定明确的终点来维持高唤醒度 。  </p>
+</li>
+<li><p><strong>操作</strong>：</p>
+<ul>
+<li><p><strong>短周期</strong>：鉴于受试者专注力较弱，建议从 <strong>15分钟</strong> 开始，而非标准的25分钟。</p>
+</li>
+<li><p><strong>全神贯注</strong>：在这15分钟内，即使看不懂也不许停，不许回视，不许做任何与阅读无关的事。</p>
+</li>
+<li><p><strong>强制休息</strong>：时间一到，必须停止阅读，休息 3-5 分钟。</p>
+</li>
+<li><p><strong>记录</strong>：每完成一个番茄钟，打一个勾。这种即时反馈能提供多巴胺奖励。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-3-2-主动阅读与元认知监控（Metacognitive-Strategies）"><a href="#5-3-2-主动阅读与元认知监控（Metacognitive-Strategies）" class="headerlink" title="5.3.2 主动阅读与元认知监控（Metacognitive Strategies）"></a>5.3.2 主动阅读与元认知监控（Metacognitive Strategies）</h4><ul>
+<li><p><strong>SQ3R 策略</strong>（Survey, Question, Read, Recite, Review）的简化版 。  </p>
+<ul>
+<li><p><strong>预读（Previewing）</strong>：在开始精读前，花 1 分钟快速浏览标题、小标题、粗体字、开头和结尾。建立文章的宏观结构。</p>
+</li>
+<li><p><strong>提问（Questioning）</strong>：读之前先问自己：“这篇文章想解决什么问题？”“作者的核心观点是什么？”</p>
+</li>
+<li><p><strong>带着问题去“搜索”</strong>：将阅读模式从“被动接收”转变为“主动搜索”。当大脑在寻找猎物（答案）时，它是不可能分神的。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>段落概括</strong>：每读完一个段落，强迫自己停顿 1 秒，用一个词或一句话概括大意 。这能确保大脑始终在线。</p>
+</li>
+</ul>
+<p>  </p>
+<hr>
+<h2 id="6-训练计划建议（8周改善方案）"><a href="#6-训练计划建议（8周改善方案）" class="headerlink" title="6. 训练计划建议（8周改善方案）"></a>6. 训练计划建议（8周改善方案）</h2><p>为了确保效果，建议受试者按照以下渐进式计划执行：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>周期</th>
+<th>核心目标</th>
+<th>每日训练内容 (约30分钟)</th>
+<th>预期成果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>启动期</strong></td>
+<td><strong>第 1-2 周</strong></td>
+<td><strong>打破默读</strong></td>
+<td>1\. <strong>视觉引导阅读</strong> (15 min)：手指强行引导，速度设定为“略微跟不上”。 2\. <strong>听觉干扰</strong> (10 min)：阅读时播放白噪音或打拍子。 3\. <strong>舒尔特方格</strong> (5 min)：每天5次，记录时间。</td>
+<td>阅读速度突破 <strong>300 CPM</strong>。初期可能会感到理解率下降和不适，这是正常的脑神经重塑过程。</td>
+</tr>
+<tr>
+<td><strong>突破期</strong></td>
+<td><strong>第 3-4 周</strong></td>
+<td><strong>拓展视幅</strong></td>
+<td>1\. <strong>意群阅读练习</strong> (15 min)：尝试一眼看3-5个字，减少眼跳。 2\. <strong>舒尔特方格进阶</strong> (10 min)：尝试达到20秒&#x2F;次。 3\. <strong>番茄阅读法</strong> (20 min)：进行高强度专注阅读。</td>
+<td>舒尔特方格进入 <strong>20秒</strong>。阅读时不再逐字扫描，眼动更加平滑。速度达到 <strong>450 CPM</strong>。</td>
+</tr>
+<tr>
+<td><strong>巩固期</strong></td>
+<td><strong>第 5-8 周</strong></td>
+<td><strong>深化理解</strong></td>
+<td>1\. <strong>主动阅读实战</strong> (30 min)：应用预读、提问策略。 2\. <strong>变速阅读</strong>：先快读略读，再慢读精读，自由切换。 3\. <strong>定期自测</strong>：每周末进行一次10分钟测速。</td>
+<td>建立全新的阅读习惯。速度稳定在 <strong>500-700 CPM</strong>。分神现象显著减少，进入“心流”状态。</td>
+</tr>
+</tbody></table>
+<p>Export to Sheets</p>
+<hr>
+<h2 id="7-结论"><a href="#7-结论" class="headerlink" title="7. 结论"></a>7. 结论</h2><p>通过对受试者“10分钟2200字”实验数据的深度剖析，本报告得出以下核心结论：</p>
+<ol>
+<li><p><strong>诊断明确</strong>：220 CPM 的阅读速度是典型的<strong>朗读速度</strong>，表明受试者受到严重的**全音默读（Subvocalization）<strong>习惯和</strong>逐字注视（Word-by-Word Fixation）**模式的限制。这属于阅读策略层面的技术性低效，而非智力或理解力问题。</p>
+</li>
+<li><p><strong>因果修正</strong>：<strong>专注力低下并非导致阅读慢的根本原因，相反，过慢的阅读速度导致的“认知欠载”才是导致分神的主因。</strong> 慢速阅读无法充分激活大脑的任务正激活网络（TPN），导致默认模式网络（DMN）接管大脑，引发思维游荡。</p>
+</li>
+<li><p><strong>系统解决方案</strong>：解决分神问题的最佳途径不是枯燥地“练习专注”，而是通过<strong>视觉引导、听觉干扰、舒尔特方格</strong>等科学训练手段，强行提升阅读速度。当阅读速度提升至大脑的舒适带宽（500 CPM+）时，认知资源将被充分调用，分神现象将自然消退。</p>
+</li>
+</ol>
+<p>快速阅读不仅是为了省时间，更是为了<strong>抢占大脑的注意力高地</strong>。通过执行本报告提供的8周训练计划，受试者完全有能力重塑神经回路，实现从“低效朗读者”到“高效视觉阅读者”的认知跃迁。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Brain/" class="category-chain-item">Brain</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>阅读速度与注意力机制的关系</div>
+      <div>https://tolsz.site/2025/11/12/阅读速度与注意力机制的关系/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>wbj_Lsz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年11月12日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/24/life/%E5%91%A8%E6%9C%AB%E5%8C%97%E4%BA%AC%E6%AD%A6%E6%B1%89%E5%BE%80%E8%BF%94%E9%9A%8F%E8%AE%B0/" title="周末北京武汉往返随记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">周末北京武汉往返随记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/01/Whisper-deepseek/" title="Whisper&amp;deepseek">
+                        <span class="hidden-mobile">Whisper&amp;deepseek</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wcool1/wcool1.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'Comment');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
