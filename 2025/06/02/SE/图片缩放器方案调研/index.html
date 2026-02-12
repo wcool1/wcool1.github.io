@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/person.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="wbj_Lsz">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="图片缩放器是所有内容平台不可或缺的功能，对其展开方案调研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片缩放器方案调研">
+<meta property="og:url" content="https://tolsz.site/2025/06/02/SE/%E5%9B%BE%E7%89%87%E7%BC%A9%E6%94%BE%E5%99%A8%E6%96%B9%E6%A1%88%E8%B0%83%E7%A0%94/index.html">
+<meta property="og:site_name" content="toLsz">
+<meta property="og:description" content="图片缩放器是所有内容平台不可或缺的功能，对其展开方案调研">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-06-02T14:11:50.000Z">
+<meta property="article:modified_time" content="2026-02-12T03:41:50.979Z">
+<meta property="article:author" content="wbj_Lsz">
+<meta property="article:tag" content="fontend">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>图片缩放器方案调研 - toLsz</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"tolsz.site","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>toLsz&#39;blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/blog_banner.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="图片缩放器方案调研"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-06-02 22:11" pubdate>
+           2025 年 06 月 02 日 , 晚上 10:11 , 星期一
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          5k 字
+        
+      </span>
+    
+
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">图片缩放器方案调研</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>图片缩放器是所有内容平台不可或缺的功能，对其展开方案调研</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="基于-Vue-3-和-TypeScript-的全局图像放大系统架构研究报告"><a href="#基于-Vue-3-和-TypeScript-的全局图像放大系统架构研究报告" class="headerlink" title="基于 Vue 3 和 TypeScript 的全局图像放大系统架构研究报告"></a>基于 Vue 3 和 TypeScript 的全局图像放大系统架构研究报告</h1><h2 id="1-绪论与需求背景分析"><a href="#1-绪论与需求背景分析" class="headerlink" title="1. 绪论与需求背景分析"></a>1. 绪论与需求背景分析</h2><h3 id="1-1-研究背景与问题定义"><a href="#1-1-研究背景与问题定义" class="headerlink" title="1.1 研究背景与问题定义"></a>1.1 研究背景与问题定义</h3><p>在现代 Web 应用开发中，图像作为信息传递的核心媒介，其交互体验直接关系到用户的留存率与满意度。随着单页应用（Single Page Application, SPA）技术的普及，特别是 Vue 3 及其组合式 API（Composition API）和 TypeScript 强类型系统的广泛采用，前端架构的复杂度日益提升。开发者面临的一个典型且具挑战性的需求是：<strong>如何在一个已经成型或正在开发的 Vue 3 + TypeScript 项目中，实现对“所有”图片的全局放大功能（Lightbox），而无需侵入式地修改现有的每一个组件模板。</strong></p>
+<p>本报告旨在响应这一特定需求，提供一套“成熟方案”。所谓“成熟方案”，在企业级软件工程语境下，应当具备以下核心特质：</p>
+<ol>
+<li><p><strong>全局性（Ubiquity）：</strong> 能够自动覆盖应用内的静态图片、动态加载图片、富文本中的图片以及第三方组件内的图片，无需逐一标记。</p>
+</li>
+<li><p><strong>低耦合（Decoupling）：</strong> 图像的渲染逻辑（各个业务组件）与图像的交互逻辑（放大查看）应当物理分离，避免逻辑交叉污染。</p>
+</li>
+<li><p><strong>高性能（Performance）：</strong> 在包含数千张图片的页面中，不应因绑定过多的事件监听器而导致内存泄漏或页面卡顿。</p>
+</li>
+<li><p><strong>类型安全（Type Safety）：</strong> 严格遵循 TypeScript 标准，提供完整的类型推断，杜绝 <code>any</code> 类型的滥用。</p>
+</li>
+<li><p><strong>可扩展性（Extensibility）：</strong> 支持手势操作、键盘导航、多图轮播（Gallery Mode）以及元数据展示。</p>
+</li>
+</ol>
+<h3 id="1-2-技术栈上下文与约束"><a href="#1-2-技术栈上下文与约束" class="headerlink" title="1.2 技术栈上下文与约束"></a>1.2 技术栈上下文与约束</h3><p>本方案基于以下技术栈环境构建：</p>
+<ul>
+<li><p><strong>框架核心：</strong> Vue 3.x（使用 Composition API 和 <code>&lt;script setup&gt;</code> 语法糖）。</p>
+</li>
+<li><p><strong>语言标准：</strong> TypeScript 4.x&#x2F;5.x（强调严格模式 <code>strict: true</code>）。</p>
+</li>
+<li><p><strong>状态管理：</strong> Pinia（作为 Vue 3 的官方推荐状态管理库，取代 Vuex）。</p>
+</li>
+<li><p><strong>构建工具：</strong> Vite（强调构建速度与 ES Module 支持）。</p>
+</li>
+</ul>
+<p>在 Vue 3 的生态系统中，传统的 Vue 2 插件模式（即通过 <code>Vue.prototype</code> 挂载全局方法）已被弃用 。Vue 3 强调显式的依赖注入和组合式函数的复用。因此，架构设计必须顺应这一范式转变，利用 <code>provide/inject</code> 或全局单例状态来管理 UI 层的覆盖物。  </p>
+<h3 id="1-3-报告结构导读"><a href="#1-3-报告结构导读" class="headerlink" title="1.3 报告结构导读"></a>1.3 报告结构导读</h3><p>本报告将分为七个核心部分深入剖析该解决方案。首先，我们将调研现有的 Vue 3 图片预览生态，评估 <code>v-viewer</code>、<code>vue-easy-lightbox</code> 等主流库的优劣。其次，我们将论证为何“全局事件代理”（Global Event Delegation）是实现“点击任意图片”需求的唯一架构级解法，而非传统的指令或组件包裹模式。随后，我们将详细阐述基于 Pinia 的单例模式实现，以及如何通过 TypeScript 确保系统的健壮性。最后，我们将探讨性能优化、移动端适配及服务端渲染（SSR）兼容性等高级议题。</p>
+<hr>
+<h2 id="2-前端图像可视化生态系统深度调研"><a href="#2-前端图像可视化生态系统深度调研" class="headerlink" title="2. 前端图像可视化生态系统深度调研"></a>2. 前端图像可视化生态系统深度调研</h2><p>在构建成熟方案之前，必须对现有的开源解决方案进行详尽的技术评估。选择正确的底层库是项目成功的基石。对于“图片放大器”这一功能，社区中存在多种实现路径，从轻量级的 Vue 组件到基于底层 DOM 操作的封装库。</p>
+<h3 id="2-1-主流解决方案技术评估"><a href="#2-1-主流解决方案技术评估" class="headerlink" title="2.1 主流解决方案技术评估"></a>2.1 主流解决方案技术评估</h3><p>根据 NPM 下载量、GitHub Star 数、Vue 3 原生支持度以及 TypeScript 类型定义的完整性，我们筛选出以下三个主要候选方案进行深度分析。</p>
+<h4 id="2-1-1-v-viewer-基于-Viewer-js"><a href="#2-1-1-v-viewer-基于-Viewer-js" class="headerlink" title="2.1.1 v-viewer (基于 Viewer.js)"></a>2.1.1 v-viewer (基于 Viewer.js)</h4><p><code>v-viewer</code> 是著名 JavaScript 图片查看库 <code>viewer.js</code> 的 Vue 封装版本。<code>viewer.js</code> 本身是 Web 领域功能最全面的图片查看器之一。</p>
+<ul>
+<li><p><strong>功能特性：</strong> 支持缩放、旋转、翻转、键盘导航、触摸手势、缩略图导航、标题显示等 。其核心优势在于极其丰富的功能集，几乎涵盖了所有桌面端和移动端的交互需求。  </p>
+</li>
+<li><p><strong>Vue 3 与 TypeScript 支持：</strong> <code>v-viewer</code> 的最新版本（3.x）已完全兼容 Vue 3，并提供了内置的 TypeScript 类型声明文件（<code>.d.ts</code>），这使得在 TS 项目中引入该库时，能够获得良好的代码提示和类型检查 。  </p>
+</li>
+<li><p><strong>架构适配性：</strong> 它提供了一个非常关键的 API —— <code>viewerApi</code>。允许开发者以函数调用的方式（Programmatic API）直接启动查看器，而无需在模板中显式声明 <code>&lt;viewer&gt;</code> 组件。这一点对于实现“全局拦截”至关重要 。</p>
+</li>
+</ul>
+<p>  </p>
+<h4 id="2-1-2-vue-easy-lightbox"><a href="#2-1-2-vue-easy-lightbox" class="headerlink" title="2.1.2 vue-easy-lightbox"></a>2.1.2 vue-easy-lightbox</h4><p>这是一个专为 Vue 设计的轻量级灯箱插件，且在 Vue 3 版本中重写以支持 TypeScript。</p>
+<ul>
+<li><p><strong>功能特性：</strong> 专注于核心功能：缩放、旋转、切换。它没有 Viewer.js 那么庞大的体积，UI 风格更加简洁现代 。  </p>
+</li>
+<li><p><strong>Vue 3 与 TypeScript 支持：</strong> 作者提供了完整的 TypeScript 支持，并且在新版本中引入了 <code>useEasyLightbox</code> 组合式函数（Composable），这与 Vue 3 的设计理念高度契合 。  </p>
+</li>
+<li><p><strong>架构适配性：</strong> 它主要设计为组件形式使用（<code>&lt;VueEasyLightbox... /&gt;</code>）。虽然可以通过状态控制其显示隐藏，但缺乏像 Viewer.js 那样强大的 DOM 扫描和自动分组能力。</p>
+</li>
+</ul>
+<h4 id="2-1-3-Element-Plus-Image-Viewer"><a href="#2-1-3-Element-Plus-Image-Viewer" class="headerlink" title="2.1.3 Element Plus Image Viewer"></a>2.1.3 Element Plus Image Viewer</h4><p>如果项目已经使用了 Element Plus UI 库，其内部的 <code>el-image-viewer</code> 组件是一个备选项。</p>
+<ul>
+<li><p><strong>功能特性：</strong> 提供基础的预览功能，与 Element Plus 设计语言统一。</p>
+</li>
+<li><p><strong>局限性：</strong> 官方文档主要将其作为 <code>el-image</code> 组件的附属功能介绍，单独调用的文档较少，且功能扩展性（如自定义手势、复杂的工具栏定制）不如专业库 。</p>
+</li>
+</ul>
+<p>  </p>
+<h3 id="2-2-选型决策矩阵"><a href="#2-2-选型决策矩阵" class="headerlink" title="2.2 选型决策矩阵"></a>2.2 选型决策矩阵</h3><p>为了直观展示各方案的差异，我们构建了以下对比矩阵：</p>
+<table>
+<thead>
+<tr>
+<th>评估维度</th>
+<th>v-viewer (Viewer.js)</th>
+<th>vue-easy-lightbox</th>
+<th>Element Plus Viewer</th>
+<th>自研实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>成熟度 (Maturity)</strong></td>
+<td><strong>极高</strong> (行业标准级)</td>
+<td>高</td>
+<td>中</td>
+<td>低 (需长期迭代)</td>
+</tr>
+<tr>
+<td><strong>功能丰富度</strong></td>
+<td><strong>极高</strong> (旋转&#x2F;翻转&#x2F;Exif)</td>
+<td>中 (基础缩放)</td>
+<td>中</td>
+<td>取决于投入</td>
+</tr>
+<tr>
+<td><strong>TS 类型支持</strong></td>
+<td><strong>原生内置</strong></td>
+<td><strong>原生内置</strong></td>
+<td>内置</td>
+<td>需自行定义</td>
+</tr>
+<tr>
+<td><strong>调用方式</strong></td>
+<td>组件 + <strong>函数式API</strong></td>
+<td>组件 + Composable</td>
+<td>组件为主</td>
+<td>任意</td>
+</tr>
+<tr>
+<td><strong>包体积 (Gzip)</strong></td>
+<td>较重 (~20KB+)</td>
+<td>轻量 (~5KB)</td>
+<td>随库引入</td>
+<td>极轻</td>
+</tr>
+<tr>
+<td><strong>全局整合难度</strong></td>
+<td><strong>低</strong> (API调用极其方便)</td>
+<td>中</td>
+<td>高</td>
+<td>高</td>
+</tr>
+</tbody></table>
+<p> </p>
+<h3 id="2-3-结论：基于-v-viewer-的架构选定"><a href="#2-3-结论：基于-v-viewer-的架构选定" class="headerlink" title="2.3 结论：基于 v-viewer 的架构选定"></a>2.3 结论：基于 v-viewer 的架构选定</h3><p>针对用户提出的“成熟方案”要求，<strong><code>v-viewer</code> 是最佳选择</strong>。原因如下：</p>
+<ol>
+<li><p><strong>API 调用的灵活性：</strong> <code>viewerApi</code> 函数允许我们在任何地方（包括非 Vue 组件的纯 JS&#x2F;TS 文件中）启动查看器，这完美适配了我们将要采用的“全局事件代理”模式 。  </p>
+</li>
+<li><p><strong>功能的完备性：</strong> 用户需求虽仅提到“放大”，但实际生产环境中，用户往往期望手势缩放、保存图片、旋转查看细节等功能。Viewer.js 一站式解决了这些隐性需求，无需二次开发。</p>
+</li>
+<li><p><strong>生态验证：</strong> 作为一个被大量顶级品牌使用的库 ，其稳定性和浏览器兼容性（包括移动端）远超自研或小型库。</p>
+</li>
+</ol>
+<p>  </p>
+<p>因此，本报告后续的架构设计将围绕 <strong>Vue 3 + TypeScript + Pinia + v-viewer</strong> 展开。</p>
+<hr>
+<h2 id="3-全局交互架构设计：事件代理模式"><a href="#3-全局交互架构设计：事件代理模式" class="headerlink" title="3. 全局交互架构设计：事件代理模式"></a>3. 全局交互架构设计：事件代理模式</h2><p>要实现“对所有图片增加放大器”且“不侵入组件代码”，传统的组件封装（Wrapping）或指令（Directive）模式均显得力不从心。我们需要一种更底层的架构模式——<strong>全局事件代理（Global Event Delegation）</strong>。</p>
+<h3 id="3-1-传统模式的局限性分析"><a href="#3-1-传统模式的局限性分析" class="headerlink" title="3.1 传统模式的局限性分析"></a>3.1 传统模式的局限性分析</h3><h4 id="3-1-1-模式一：组件封装"><a href="#3-1-1-模式一：组件封装" class="headerlink" title="3.1.1 模式一：组件封装 (&lt;ImagePreview&gt;)"></a>3.1.1 模式一：组件封装 (<code>&lt;ImagePreview&gt;</code>)</h4><p>开发者可能会想到封装一个 <code>&lt;ImagePreview :src=&quot;...&quot;&gt;</code> 组件，替换项目中所有的 <code>&lt;img&gt;</code> 标签。</p>
+<ul>
+<li><strong>缺陷：</strong> 这种方式对于遗留代码或第三方库（如富文本编辑器输出的 HTML、Markdown 渲染内容）无效。且重构成本巨大，不仅要修改现有代码，还会增加 DOM 深度 。</li>
+</ul>
+<p>  </p>
+<h4 id="3-1-2-模式二：全局指令-v-zoom"><a href="#3-1-2-模式二：全局指令-v-zoom" class="headerlink" title="3.1.2 模式二：全局指令 (v-zoom)"></a>3.1.2 模式二：全局指令 (<code>v-zoom</code>)</h4><p>创建一个 <code>v-zoom</code> 指令，在 <code>mounted</code> 钩子中给元素绑定点击事件。</p>
+<ul>
+<li><strong>缺陷：</strong> 虽然比组件灵活，但仍需在每个 <code>&lt;img v-zoom&gt;</code> 上手动添加。对于动态内容（<code>v-html</code>），指令无法自动渗透到内部元素，除非编写复杂的 MutationObserver 逻辑。且每个图片都绑定监听器会带来显著的内存开销 。</li>
+</ul>
+<p>  </p>
+<h3 id="3-2-推荐模式：全局事件代理-Global-Event-Delegation"><a href="#3-2-推荐模式：全局事件代理-Global-Event-Delegation" class="headerlink" title="3.2 推荐模式：全局事件代理 (Global Event Delegation)"></a>3.2 推荐模式：全局事件代理 (Global Event Delegation)</h3><p>事件代理利用了 DOM 事件的<strong>冒泡机制（Event Bubbling）</strong>。当用户点击页面深处的 <code>&lt;img&gt;</code> 元素时，点击事件会逐层向上传播，最终到达 <code>document</code> 或 <code>window</code> 对象。</p>
+<p><strong>核心架构逻辑：</strong></p>
+<ol>
+<li><p><strong>监听：</strong> 在应用的最顶层（通常是 <code>App.vue</code> 或 <code>main.ts</code> 初始化阶段），向 <code>document</code> 注册一个全局的 <code>click</code> 侦听器 。  </p>
+</li>
+<li><p><strong>拦截：</strong> 当事件触发时，检查 <code>event.target</code> 是否为 <code>HTMLImageElement</code>（即 <code>&lt;img&gt;</code> 标签）。</p>
+</li>
+<li><p><strong>过滤：</strong> 通过类名（如 <code>.no-zoom</code>）、父级元素（如是否在 <code>&lt;a&gt;</code> 标签内）或属性（<code>data-no-zoom</code>）来判断该图片是否需要被拦截 。  </p>
+</li>
+<li><p><strong>执行：</strong> 如果满足条件，阻止默认行为（如需要），并调用全局单例的 Lightbox 服务进行展示。</p>
+</li>
+</ol>
+<p><strong>数据与性能优势：</strong></p>
+<ul>
+<li><p><strong>内存占用恒定：</strong> 无论页面有一张还是五千张图片，内存中永远只有一个事件监听器函数 。  </p>
+</li>
+<li><p><strong>动态内容支持：</strong> AJAX 加载的图片、路由切换后的新页面图片、富文本中的图片，只要它们出现在 DOM 中并被点击，都会触发冒泡，无需重新绑定 。</p>
+</li>
+</ul>
+<p>  </p>
+<h3 id="3-3-TypeScript-类型工程"><a href="#3-3-TypeScript-类型工程" class="headerlink" title="3.3 TypeScript 类型工程"></a>3.3 TypeScript 类型工程</h3><p>在 TypeScript 环境下，事件代理需要严格的类型断言。<code>event.target</code> 默认是 <code>EventTarget | null</code>，需要通过类型守卫（Type Guard）确认为 <code>HTMLImageElement</code> 才能安全访问 <code>.src</code> 或 <code>.dataset</code> 属性。</p>
+<p>TypeScript</p>
+<pre><code class="hljs">// 类型守卫示例
+function isImageElement(target: EventTarget | null): target is HTMLImageElement &#123;
+  return (target as HTMLElement)?.tagName === &#39;IMG&#39;;
+&#125;
+</code></pre>
+<p>这种类型安全的处理是“成熟方案”区别于即兴代码的重要标志 。  </p>
+<hr>
+<h2 id="4-核心实现策略：单例状态管理-Singleton-State"><a href="#4-核心实现策略：单例状态管理-Singleton-State" class="headerlink" title="4. 核心实现策略：单例状态管理 (Singleton State)"></a>4. 核心实现策略：单例状态管理 (Singleton State)</h2><p>仅仅拦截点击是不够的，我们还需要一个机制来唤起 UI。在 Vue 3 中，最佳实践是利用 <strong>Pinia</strong> 建立一个全局单例状态，以此解耦“点击检测逻辑”和“UI 渲染逻辑”。</p>
+<h3 id="4-1-状态管理架构"><a href="#4-1-状态管理架构" class="headerlink" title="4.1 状态管理架构"></a>4.1 状态管理架构</h3><p>我们将创建一个名为 <code>useLightboxStore</code> 的 Pinia store。这个 store 将充当整个系统的“控制台”。</p>
+<ul>
+<li><p><strong>State（状态）：</strong></p>
+<ul>
+<li><p><code>visible</code>: 布尔值，控制查看器是否显示。</p>
+</li>
+<li><p><code>images</code>: 字符串数组或对象数组，存储当前需要展示的图片列表。</p>
+</li>
+<li><p><code>index</code>: 数字，当前查看图片的索引。</p>
+</li>
+<li><p><code>options</code>: 配置对象，用于透传 Viewer.js 的配置（如是否显示工具栏、背景遮罩透明度等）。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Actions（动作）：</strong></p>
+<ul>
+<li><p><code>open(imageSources, startIndex)</code>: 接收图片列表和初始索引，激活状态。</p>
+</li>
+<li><p><code>close()</code>: 重置状态，关闭查看器。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>这种设计模式符合 Vue 3 的**单一数据源（Single Source of Truth）**原则 。任何组件（不仅仅是全局点击监听器）都可以通过调用 <code>store.open(...)</code> 来唤起看图器，极大地提高了代码复用性。  </p>
+<h3 id="4-2-响应式联动机制"><a href="#4-2-响应式联动机制" class="headerlink" title="4.2 响应式联动机制"></a>4.2 响应式联动机制</h3><p>在架构层面，我们并不直接在 <code>App.vue</code> 的模板中编写大量的 <code>v-if</code> 逻辑来挂载 <code>&lt;viewer&gt;</code> 组件。相反，我们将利用 Vue 的 <code>watch</code> 侦听器来监控 store 的变化。</p>
+<p>当 <code>lightboxStore.visible</code> 变为 <code>true</code> 时，我们将通过 <code>v-viewer</code> 提供的<strong>指令式 API</strong>（Imperative API）—— <code>viewerApi(&#123;&#125;)</code> —— 来动态创建查看器实例 。这种方法避免了在 DOM 中预渲染隐藏的图片列表，减少了 DOM 节点的数量，提升了首屏渲染性能。  </p>
+<hr>
+<h2 id="5-详细实现方案-The-Implementation"><a href="#5-详细实现方案-The-Implementation" class="headerlink" title="5. 详细实现方案 (The Implementation)"></a>5. 详细实现方案 (The Implementation)</h2><p>本章节将提供生产环境级别的代码实现，涵盖 Store 定义、全局拦截器 Composable、以及根组件整合。</p>
+<h3 id="5-1-第一步：安装依赖与类型定义"><a href="#5-1-第一步：安装依赖与类型定义" class="headerlink" title="5.1 第一步：安装依赖与类型定义"></a>5.1 第一步：安装依赖与类型定义</h3><p>首先确保项目中安装了必要的库：</p>
+<p>Bash</p>
+<pre><code class="hljs">npm install v-viewer viewerjs pinia
+# 或者
+yarn add v-viewer viewerjs pinia
+</code></pre>
+<p>由于我们使用的是 TypeScript，通常需要确认类型定义。<code>v-viewer</code> 自带类型，但在某些严格配置下，可能需要补充类型声明。</p>
+<p><strong>文件：<code>src/types/v-viewer.d.ts</code></strong> 如果遇到类型报错，可以添加此补充定义：</p>
+<p>TypeScript</p>
+<pre><code class="hljs">declare module &#39;v-viewer&#39; &#123;
+  import &#123; Plugin &#125; from &#39;vue&#39;;
+  export const component: any;
+  // 定义 api 函数的强类型签名
+  export const api: (options: &#123; 
+      images: string | object; 
+      options?: object 
+  &#125;) =&gt; any;
+  const plugin: Plugin;
+  export default plugin;
+&#125;
+</code></pre>
+<h3 id="5-2-第二步：构建-Lightbox-Store-Pinia"><a href="#5-2-第二步：构建-Lightbox-Store-Pinia" class="headerlink" title="5.2 第二步：构建 Lightbox Store (Pinia)"></a>5.2 第二步：构建 Lightbox Store (Pinia)</h3><p>这是整个系统的状态中枢。</p>
+<p><strong>文件：<code>src/stores/lightboxStore.ts</code></strong></p>
+<p>TypeScript</p>
+<pre><code class="hljs">import &#123; defineStore &#125; from &#39;pinia&#39;;
+import &#123; ref &#125; from &#39;vue&#39;;
+
+// 定义图片源接口，支持 URL 字符串或包含 src/alt 的对象
+export type ImageSource = string | &#123; src: string; alt?: string; [key: string]: any &#125;;
+
+export const useLightboxStore = defineStore(&#39;lightbox&#39;, () =&gt; &#123;
+  // --- State ---
+  const isVisible = ref(false);
+  const imageList = ref&lt;ImageSource&gt;();
+  const initialIndex = ref(0);
+  
+  // --- Actions ---
+  
+  /**
+   * 打开图片查看器
+   * @param images - 图片源数组
+   * @param index - 初始展示的图片索引
+   */
+  const show = (images: ImageSource, index: number = 0) =&gt; &#123;
+    // 数据清洗：过滤掉空值
+    if (!images |
+
+| images.length === 0) &#123;
+      console.warn(&#39;[Lightbox] No images provided to show.&#39;);
+      return;
+    &#125;
+    
+    imageList.value = images;
+    initialIndex.value = index;
+    isVisible.value = true;
+  &#125;;
+
+  /**
+   * 关闭图片查看器
+   */
+  const hide = () =&gt; &#123;
+    isVisible.value = false;
+    // 可选：延迟清空数据以配合动画
+    setTimeout(() =&gt; &#123;
+      imageList.value =;
+      initialIndex.value = 0;
+    &#125;, 300);
+  &#125;;
+
+  return &#123;
+    isVisible,
+    imageList,
+    initialIndex,
+    show,
+    hide
+  &#125;;
+&#125;);
+</code></pre>
+<p>引用说明：此实现基于 Vue 3 Composition API 和 Pinia 的 Setup Store 模式 。  </p>
+<h3 id="5-3-第三步：开发全局事件拦截器-Composable"><a href="#5-3-第三步：开发全局事件拦截器-Composable" class="headerlink" title="5.3 第三步：开发全局事件拦截器 (Composable)"></a>5.3 第三步：开发全局事件拦截器 (Composable)</h3><p>这是实现“全自动”的核心逻辑。我们将逻辑封装在一个 Composable 函数中，以便在 <code>App.vue</code> 中调用。</p>
+<p><strong>文件：<code>src/composables/useGlobalImageInterceptor.ts</code></strong></p>
+<p>TypeScript</p>
+<pre><code class="hljs">import &#123; onMounted, onUnmounted &#125; from &#39;vue&#39;;
+import &#123; useLightboxStore &#125; from &#39;@/stores/lightboxStore&#39;;
+
+export function useGlobalImageInterceptor() &#123;
+  const lightboxStore = useLightboxStore();
+
+  const handleGlobalClick = (event: MouseEvent) =&gt; &#123;
+    // 1. 类型断言与基础检查
+    const target = event.target as HTMLElement;
+    if (!target |
+
+| target.tagName!== &#39;IMG&#39;) &#123;
+      return;
+    &#125;
+
+    const imgElement = target as HTMLImageElement;
+
+    // 2. 排除逻辑 (Filtering)
+    // 场景：排除 Logo、图标、特定类名的图片
+    // 检查自身或父级是否有 &#39;no-zoom&#39; 类名
+    if (imgElement.closest(&#39;.no-zoom&#39;) |
+
+| imgElement.classList.contains(&#39;no-zoom&#39;)) &#123;
+      return;
+    &#125;
+
+    // 3. 链接处理逻辑
+    // 如果图片被包裹在链接中，通常需要权衡是跳转链接还是放大图片。
+    // 成熟方案建议：如果有链接，且链接是跳转页面，则不拦截（尊重超链接）。
+    // 除非链接本身是指向大图的（这是一种传统的 Lightbox 写法）。
+    const parentLink = imgElement.closest(&#39;a&#39;);
+    if (parentLink) &#123;
+      // 简单的启发式判断：如果链接是指向图片的，则拦截并放大；否则放行
+      const href = parentLink.getAttribute(&#39;href&#39;);
+      const isImageLink = href?.match(/\.(jpeg|jpg|gif|png|webp)$/i);
+      
+      if (!isImageLink) &#123;
+        // 允许跳转，不执行放大
+        return; 
+      &#125; else &#123;
+        // 是图片链接，阻止跳转，执行放大
+        event.preventDefault();
+      &#125;
+    &#125;
+
+    // 4. 获取高清图源
+    // 许多现代网站使用缩略图 (src) 和高清图 (data-original / data-src)
+    // 优先使用高清图
+    const highResSrc = imgElement.dataset.original |
+
+| imgElement.dataset.src |
+| imgElement.src;
+    const altText = imgElement.alt |
+
+| &#39;Image&#39;;
+
+    // 5. 上下文构建 (Contextual Gallery)
+    // 这是一个高级特性：点击图片时，自动识别它是否属于一个“图集”。
+    // 例如：文章正文中的图片容器。
+    let galleryImages: string =;
+    let activeIndex = 0;
+
+    // 假设我们约定，文章内容的容器类名为 &#39;article-content&#39; 或 &#39;gallery-group&#39;
+    const galleryContainer = imgElement.closest(&#39;.article-content,.gallery-group&#39;);
+
+    if (galleryContainer) &#123;
+      // 扫描容器内所有可视图片
+      const allImages = Array.from(galleryContainer.querySelectorAll(&#39;img&#39;))
+       .filter(img =&gt;!img.classList.contains(&#39;no-zoom&#39;) &amp;&amp; img.style.display!== &#39;none&#39;);
+      
+      galleryImages = allImages.map(img =&gt; &#123;
+        return (img as HTMLElement).dataset.original |
+
+| (img as HTMLElement).dataset.src |
+| (img as HTMLImageElement).src;
+      &#125;);
+
+      // 找到当前点击图片在集合中的索引
+      activeIndex = galleryImages.findIndex(src =&gt; src === highResSrc);
+      if (activeIndex === -1) activeIndex = 0;
+    &#125; else &#123;
+      // 单图模式
+      galleryImages =;
+      activeIndex = 0;
+    &#125;
+
+    // 6. 触发 Store
+    // 阻止事件继续冒泡，防止触发其他无关的点击逻辑
+    event.stopPropagation(); 
+    lightboxStore.show(galleryImages, activeIndex);
+  &#125;;
+
+  // 生命周期管理
+  onMounted(() =&gt; &#123;
+    // 使用 capture: true 可以在事件到达目标之前拦截，但通常冒泡阶段更安全
+    // 这里使用 document 级的监听
+    document.addEventListener(&#39;click&#39;, handleGlobalClick);
+  &#125;);
+
+  onUnmounted(() =&gt; &#123;
+    document.removeEventListener(&#39;click&#39;, handleGlobalClick);
+  &#125;);
+&#125;
+</code></pre>
+<p>引用说明：事件代理机制利用了 DOM 的 Event Bubbling ，通过 <code>closest</code> API 实现了智能的上下文感知，这是成熟方案区别于简单 Demo 的关键点。  </p>
+<h3 id="5-4-第四步：根组件集成与-UI-渲染"><a href="#5-4-第四步：根组件集成与-UI-渲染" class="headerlink" title="5.4 第四步：根组件集成与 UI 渲染"></a>5.4 第四步：根组件集成与 UI 渲染</h3><p>最后，在 <code>App.vue</code> 中挂载逻辑。</p>
+<p><strong>文件：<code>src/App.vue</code></strong></p>
+<p>HTML</p>
+<pre><code class="hljs">&lt;template&gt;
+  &lt;router-view /&gt;
+  
+  &lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import &#123; watch &#125; from &#39;vue&#39;;
+import &#123; useLightboxStore &#125; from &#39;@/stores/lightboxStore&#39;;
+import &#123; useGlobalImageInterceptor &#125; from &#39;@/composables/useGlobalImageInterceptor&#39;;
+import &#123; api as viewerApi &#125; from &#39;v-viewer&#39;;
+import &#39;viewerjs/dist/viewer.css&#39;; // 引入样式
+
+// 1. 初始化全局拦截器
+useGlobalImageInterceptor();
+
+// 2. 监听 Store 变化以驱动 Viewer.js
+const lightboxStore = useLightboxStore();
+
+// 定义 Viewer.js 的配置项
+// 参考文档：https://github.com/fengyuanchen/viewerjs#options
+const viewerOptions = &#123;
+  toolbar: true,
+  navbar: true,
+  title: false, // 简洁模式，通常不需要显示文件名
+  movable: true,
+  zoomable: true,
+  rotatable: true,
+  scalable: true,
+  transition: true, // 启用 CSS3 过渡
+  fullscreen: true,
+  keyboard: true,
+  // 核心：当 Viewer 关闭时，必须同步 Store 状态
+  hidden: () =&gt; &#123;
+    lightboxStore.hide();
+  &#125;,
+&#125;;
+
+// 3. 响应式联动
+watch(
+  () =&gt; lightboxStore.isVisible,
+  (visible) =&gt; &#123;
+    if (visible) &#123;
+      // 调用 API 生成实例
+      const $viewer = viewerApi(&#123;
+        options: &#123;
+         ...viewerOptions,
+          initialViewIndex: lightboxStore.initialIndex,
+        &#125;,
+        images: lightboxStore.imageList,
+      &#125;);
+      
+      // 注意：viewerApi 会返回 viewer 实例，如果需要更复杂的控制（如销毁），可以保存它
+      // 但 v-viewer 默认会在 hide 时自动清理 DOM
+    &#125;
+  &#125;
+);
+&lt;/script&gt;
+</code></pre>
+<hr>
+<h2 id="6-高级优化与成熟度指标"><a href="#6-高级优化与成熟度指标" class="headerlink" title="6. 高级优化与成熟度指标"></a>6. 高级优化与成熟度指标</h2><p>上述代码实现了一个基础的全局放大系统，但要达到“成熟方案”的标准，还需在以下几个维度进行优化。</p>
+<h3 id="6-1-性能优化：懒加载与代码分割"><a href="#6-1-性能优化：懒加载与代码分割" class="headerlink" title="6.1 性能优化：懒加载与代码分割"></a>6.1 性能优化：懒加载与代码分割</h3><p>引入 <code>viewerjs</code> 会增加应用的包体积（gzip 后约 20KB+）。如果在用户从未点击图片的情况下就加载这部分代码，是对带宽的浪费。</p>
+<p><strong>优化方案：动态导入（Dynamic Import）</strong></p>
+<p>我们可以修改 <code>App.vue</code> 中的 <code>watch</code> 逻辑，仅在第一次需要显示时才加载库文件。</p>
+<p>TypeScript</p>
+<pre><code class="hljs">watch(
+  () =&gt; lightboxStore.isVisible,
+  async (visible) =&gt; &#123;
+    if (visible) &#123;
+      // 动态导入库和样式
+      // Vite 会自动将这部分代码分割成独立的 chunk
+      const [viewerModule, _css] = await Promise.all([
+        import(&#39;v-viewer&#39;),
+        import(&#39;viewerjs/dist/viewer.css&#39;)
+      ]);
+      
+      const viewerApi = viewerModule.api;
+      
+      viewerApi(&#123;
+        options: &#123;...viewerOptions, initialViewIndex: lightboxStore.initialIndex &#125;,
+        images: lightboxStore.imageList,
+      &#125;);
+    &#125;
+  &#125;
+);
+</code></pre>
+<p>这种优化可以显著提升应用的首屏加载速度（FCP&#x2F;LCP）。  </p>
+<h3 id="6-2-移动端与响应式适配"><a href="#6-2-移动端与响应式适配" class="headerlink" title="6.2 移动端与响应式适配"></a>6.2 移动端与响应式适配</h3><p>Viewer.js 原生支持触摸手势（Touch Gestures），但在移动端，浏览器的默认行为（如双击缩放页面）可能会与查看器冲突。</p>
+<ul>
+<li><p><strong>视口设置：</strong> 确保 <code>index.html</code> 中设置了正确的 meta viewport：</p>
+<p>HTML</p>
+<pre><code class="hljs">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;
+</code></pre>
+</li>
+<li><p><strong>CSS 触摸操作：</strong> 在全局 CSS 中，建议对图片元素设置 <code>touch-action</code> 属性，以优化浏览器对点击和滑动的处理。</p>
+<p>CSS</p>
+<pre><code class="hljs">img &#123;
+  /* 允许浏览器处理平移和缩放，但在 viewer 打开时 viewer.js 会接管 */
+  touch-action: manipulation; 
+&#125;
+</code></pre>
+</li>
+</ul>
+<h3 id="6-3-内存泄漏防护"><a href="#6-3-内存泄漏防护" class="headerlink" title="6.3 内存泄漏防护"></a>6.3 内存泄漏防护</h3><p>在 SPA 中，路由切换不会刷新页面。如果全局监听器绑定不当，可能会导致内存泄漏。<code>useGlobalImageInterceptor</code> 中使用了 <code>onUnmounted</code> 进行事件解绑，这是安全的。但是，<code>v-viewer</code> 创建的 DOM 实例如果异常退出（如组件强制卸载），可能会残留在 <code>body</code> 中。</p>
+<p><strong>解决方案：</strong> 确保 <code>viewerOptions</code> 中的 <code>hidden</code> 回调被正确执行。此外，Pinia store 的状态在关闭时应及时重置，避免持有没有必要的大数组引用。</p>
+<h3 id="6-4-高清图与渐进式加载体验"><a href="#6-4-高清图与渐进式加载体验" class="headerlink" title="6.4 高清图与渐进式加载体验"></a>6.4 高清图与渐进式加载体验</h3><p>成熟的方案应考虑到图片加载体验。在列表中展示的是小图（thumbnail），放大时展示的是大图（original）。</p>
+<p>在 5.3 节的代码中，我们优先读取 <code>dataset.original</code>：</p>
+<p>TypeScript</p>
+<pre><code class="hljs">const highResSrc = imgElement.dataset.original |
+
+| imgElement.src;
+</code></pre>
+<p>开发者只需在业务代码中遵循这一约定：</p>
+<p>HTML</p>
+<pre><code class="hljs">&lt;img src=&quot;small.jpg&quot; data-original=&quot;heavy-4k-image.jpg&quot; /&gt;
+</code></pre>
+<p>系统即可自动处理“缩略图 -&gt; 高清图”的无缝切换，无需额外配置。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/SE/" class="category-chain-item">SE</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/fontend/" class="print-no-link">#fontend</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>图片缩放器方案调研</div>
+      <div>https://tolsz.site/2025/06/02/SE/图片缩放器方案调研/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>wbj_Lsz</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年6月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/11/12/Tech/%E9%98%85%E8%AF%BB%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E5%85%B3%E7%B3%BB/" title="阅读速度与注意力机制的关系">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">阅读速度与注意力机制的关系</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/03/01/AI/Whisper-deepseek/" title="Whisper&amp;deepseek">
+                        <span class="hidden-mobile">Whisper&amp;deepseek</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'wcool1/wcool1.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'Comment');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
